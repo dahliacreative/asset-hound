@@ -1,0 +1,99 @@
+body {
+  background-color: #52565E;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  padding-top: 140px; }
+
+.ah-header {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  background-color: #313438;
+  padding: 20px; }
+  .ah-header img {
+    display: block;
+    margin-left: auto; }
+  .ah-header__title {
+    font-weight: 400;
+    margin: 0;
+    font-size: 26px;
+    text-transform: uppercase; }
+  .ah-header__project {
+    margin: 0;
+    font-size: 13px;
+    text-transform: uppercase; }
+
+.ah-section {
+  margin: 0 auto;
+  max-width: 980px;
+  overflow: hidden;
+  padding: 40px; }
+  .ah-section__title {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    font-weight: 400;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase; }
+
+.ah-grid {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 -20px 20px 0;
+  padding: 0; }
+  .ah-grid__item {
+    margin: 0 20px 20px 0; }
+
+.ah-color {
+  background-color: #fff;
+  border-radius: 5px;
+  color: #52565E;
+  overflow: hidden;
+  width: 180px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  font-weight: 500; }
+  .ah-color__block {
+    display: block;
+    height: 120px;
+    margin-bottom: 10px; }
+  .ah-color__wrap {
+    padding: 10px; }
+  .ah-color__name {
+    margin: 0 0 5px;
+    text-transform: uppercase; }
+  .ah-color__value {
+    margin: 0; }
+
+/*# sourceMappingURL=asset-hound.css.map */
