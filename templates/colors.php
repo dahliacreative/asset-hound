@@ -11,7 +11,7 @@
   fclose($file);
 ?>
 
-<section class="ah-section" id="ah--colors">
+<section class="ah-section" id="ah-colors">
   <h1 class="ah-section__title">Color Pallette</h1>
   <ul class="ah-grid">
     <?php foreach($colors as $color) : ?>

@@ -8,10 +8,10 @@
 
 
 
-<section class="ah-section">
+<section class="ah-section" id="ah-components">
   <h1 class="ah-section__title">Components</h1>
   <?php foreach($components as $component) : ?>
-    <div class="ah-component">
+    <div class="ah-component" id="ah-<?php echo str_replace(".php", "", $component) ?>">
       <h2 class="ah-component__title"><?php echo str_replace("_", " ", str_replace("-", " ", str_replace(".php", "", $component))) ?></h2>
       <?php 
         $file = file_get_contents("components/".$component);
