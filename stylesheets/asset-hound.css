@@ -31,7 +31,8 @@ body {
   right: 0px;
   left: 0px;
   background-color: #313438;
-  padding: 20px; }
+  padding: 20px;
+  z-index: 10; }
   .ah-header img {
     display: block;
     margin-left: auto; }
@@ -50,7 +51,8 @@ body {
   bottom: 0px;
   left: 0px;
   background-color: #3e4147;
-  width: 240px; }
+  width: 240px;
+  z-index: 10; }
   .ah-navigation__list, .ah-navigation__sub-list {
     list-style: none;
     margin: 0;
