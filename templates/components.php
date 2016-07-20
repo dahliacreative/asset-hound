@@ -7,7 +7,6 @@ $componentsList = $c->get();
 
 <section class="ah-section" id="ah-components">
   <h1 class="ah-section__title">Components</h1>
-<<<<<<< HEAD
   <?php foreach($componentsList as $component) : ?>
     <?php 
         foreach($component["data"] as $var=>$value) {
