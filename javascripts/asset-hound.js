@@ -30,4 +30,14 @@ $(function() {
     }, 3000);
   });
 
+  $('.ah-navigation__link').on('click', function() {
+    var trigger = $(this),
+        target = $(trigger.attr('href')),
+        offset = target.offset().top - 90;
+
+    $('html, body').animate({ scrollTop: offset });
+    
+    return false;
+  });
+
 });
