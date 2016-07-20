@@ -13,7 +13,8 @@ $componentsList = $c->get();
             $$var = $value;
         }
     ?>
-    <div class="ah-component" id="ah-<?php echo strtolower($component["title"]); ?>">
+
+    <div class="ah-component" id="ah-<?php echo $component["class"]; ?>">
       <h2 class="ah-component__title"><?php echo $component["title"]; ?></h2>
       <div class="ah-component__example">
         <?php
