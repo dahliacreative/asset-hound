@@ -1,5 +1,7 @@
 <section class="ah-section" id="ah-colors">
-  <h1 class="ah-section__title">Typography</h1>
+  <div class="ah-section__header">
+    <h1 class="ah-section__title">Typography</h1>
+  </div>
   <div class="ah-component">
     <div class="ah-component__example">
       <h1 class="heading">Heading</h1>
