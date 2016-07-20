@@ -67,11 +67,18 @@ body
     overflow: hidden
     padding: 40px
 
-    &__title
+    &__header
+      +align-items(center)
+      +display(flex)
       border-bottom: 2px solid rgba(#fff, 0.25)
-      font-weight: 400
       margin-bottom: 20px
       padding-bottom: 20px
+
+      .ah-toggle
+        margin-left: auto
+
+    &__title
+      font-weight: 400
       text-transform: uppercase
 
   &-grid
@@ -86,17 +93,41 @@ body
 
   &-color
     background-color: #fff
-    border-radius: 5px
+    border-radius: 10px 10px 5px 5px
     color: $color
-    overflow: hidden
     width: 180px
     box-shadow: 0 5px 10px rgba(#000, 0.1)
     font-weight: 500
 
     &__block
+      border-radius: 5px 5px 0 0
+      cursor: pointer
       display: block
       height: 120px
       margin-bottom: 10px
+      position: relative
+      &:hover:before
+        opacity: 1
+      &:before
+        +position(absolute, 50% null null 50%)
+        +size(62px 22px)
+        +transform(translate(-50%, -50%))
+        +transition(opacity 0.3s)
+        background-color: rgba(#000, 0.5)
+        box-sizing: border-box
+        color: #fff
+        content: attr(data-text)
+        display: block
+        font-size: 9px
+        font-weight: 400
+        line-height: 12px
+        opacity: 0
+        padding: 5px 10px
+        text-align: center
+        text-transform: uppercase
+      &--copied
+        &:before
+          opacity: 1
 
     &__wrap
       padding: 10px
@@ -107,3 +138,30 @@ body
 
     &__value
       margin: 0
+
+  &-toggle
+    +align-items(center)
+    +display(flex)
+    font-weight: 400
+    text-transform: uppercase
+    &__input
+      display: none
+      &:checked + .ah-toggle__label:before
+        +transform(translateX(100%))
+    &__label
+      +size(60px 30px)
+      +user-select(none)
+      background-color: tint($color, 10%)
+      border-bottom: 1px solid tint($color, 15%)
+      border-top: 1px solid shade($color, 15%)
+      border-radius: 30px
+      display: block
+      margin: 0 10px
+      &:before
+        +size(30px)
+        +transition(transform 0.5s $ease-in-out-quint)
+        background-color: shade($color, 40%)
+        border-radius: 50%
+        content: ""
+        cursor: pointer
+        display: block

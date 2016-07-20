@@ -7,14 +7,13 @@ $componentsList = $c->get();
 
 <section class="ah-section" id="ah-components">
   <h1 class="ah-section__title">Components</h1>
-<<<<<<< HEAD
   <?php foreach($componentsList as $component) : ?>
     <?php 
         foreach($component["data"] as $var=>$value) {
             $$var = $value;
         }
     ?>
-    <div class="ah-component" id="ah-<?php echo $component["title"]; ?>">
+    <div class="ah-component" id="ah-<?php echo strtolower($component["title"]); ?>">
       <h2 class="ah-component__title"><?php echo $component["title"]; ?></h2>
       <div class="ah-component__example">
         <?php
@@ -26,6 +25,7 @@ $componentsList = $c->get();
       </div>
       <h3 class="ah-component__sub-title">Modifiers</h3>
       <?php foreach($component["modifiers"] as $modifier) : ?>
+          <h4 class="ah-component__mod-title"><?php echo $modifier["modifier"] ?></h4>
           <div class="ah-component__example">
             <?php echo $modifier["evalMarkup"]; ?>
           </div>

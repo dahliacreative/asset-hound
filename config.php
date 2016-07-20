@@ -15,4 +15,8 @@
   $compiledJS = $root . 'dummy-project/js/application.js';
 
   // Sass Files
+  $showColors = true;
   $colorsFile = 'colors.sass';
+
+  $showTypography = true;
+  $typographyFile = 'typography.sass';
