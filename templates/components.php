@@ -5,15 +5,16 @@ $c = new Components($componentsPath);
 $componentsList = $c->get();
 ?>
 
-<section class="ah-section">
+<section class="ah-section" id="ah-components">
   <h1 class="ah-section__title">Components</h1>
+<<<<<<< HEAD
   <?php foreach($componentsList as $component) : ?>
     <?php 
         foreach($component["data"] as $var=>$value) {
             $$var = $value;
         }
     ?>
-    <div class="ah-component">
+    <div class="ah-component" id="ah-<?php echo $component["title"]; ?>">
       <h2 class="ah-component__title"><?php echo $component["title"]; ?></h2>
       <div class="ah-component__example">
         <?php

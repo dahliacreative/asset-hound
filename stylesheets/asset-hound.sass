@@ -9,73 +9,101 @@ body
   font-size: 13px
   letter-spacing: 1px
   line-height: 1.2
-  padding-top: 140px
+  margin: 0
+  padding-left: 240px
+  padding-top: 90px
 
-.ah-header
-  +align-items(center)
-  +display(flex)
-  +position(fixed, 0px 0px null 0px)
-  background-color: shade($color, 40%)
-  padding: 20px
+.ah
 
-  img
-    display: block
-    margin-left: auto
+  &-header
+    +align-items(center)
+    +display(flex)
+    +position(fixed, 0px 0px null 0px)
+    background-color: shade($color, 40%)
+    padding: 20px
 
-  &__title
-    font-weight: 400
+    img
+      display: block
+      margin-left: auto
+
+    &__title
+      font-weight: 400
+      margin: 0
+      font-size: 26px
+      text-transform: uppercase
+
+    &__project
+      margin: 0
+      font-size: 13px
+      text-transform: uppercase
+
+  &-navigation
+    +position(fixed, 90px null 0px 0px)
+    background-color: shade($color, 25%)
+    width: 240px
+
+    &__list,
+    &__sub-list
+      list-style: none
+      margin: 0
+      padding: 0
+
+    &__sub-list
+      padding-left: 20px
+      .ah-navigation__link
+        text-transform: capitalize
+
+    &__link
+      border-bottom: 1px solid rgba(#fff, 0.1)
+      color: #fff
+      display: block
+      padding: 20px
+      text-decoration: none
+      text-transform: uppercase
+
+  &-section
     margin: 0
-    font-size: 26px
-    text-transform: uppercase
+    max-width: 980px
+    overflow: hidden
+    padding: 40px
 
-  &__project
-    margin: 0
-    font-size: 13px
-    text-transform: uppercase
+    &__title
+      border-bottom: 2px solid rgba(#fff, 0.25)
+      font-weight: 400
+      margin-bottom: 20px
+      padding-bottom: 20px
+      text-transform: uppercase
 
-.ah-section
-  margin: 0 auto
-  max-width: 980px
-  overflow: hidden
-  padding: 40px
+  &-grid
+    +display(flex)
+    +flex-wrap(wrap)
+    list-style: none
+    margin: 0 -20px 20px 0
+    padding: 0
 
-  &__title
-    border-bottom: 2px solid rgba(#fff, 0.25)
-    font-weight: 400
-    margin-bottom: 20px
-    padding-bottom: 20px
-    text-transform: uppercase
+    &__item
+      margin: 0 20px 20px 0
 
-.ah-grid
-  +display(flex)
-  +flex-wrap(wrap)
-  list-style: none
-  margin: 0 -20px 20px 0
-  padding: 0
+  &-color
+    background-color: #fff
+    border-radius: 5px
+    color: $color
+    overflow: hidden
+    width: 180px
+    box-shadow: 0 5px 10px rgba(#000, 0.1)
+    font-weight: 500
 
-  &__item
-    margin: 0 20px 20px 0
+    &__block
+      display: block
+      height: 120px
+      margin-bottom: 10px
 
-.ah-color
-  background-color: #fff
-  border-radius: 5px
-  color: $color
-  overflow: hidden
-  width: 180px
-  box-shadow: 0 5px 10px rgba(#000, 0.1)
-  font-weight: 500
+    &__wrap
+      padding: 10px
 
-  &__block
-    display: block
-    height: 120px
-    margin-bottom: 10px
+    &__name
+      margin: 0 0 5px
+      text-transform: uppercase
 
-  &__wrap
-    padding: 10px
-
-  &__name
-    margin: 0 0 5px
-    text-transform: uppercase
-
-  &__value
-    margin: 0
+    &__value
+      margin: 0
