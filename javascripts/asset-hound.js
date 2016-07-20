@@ -40,4 +40,24 @@ $(function() {
     return false;
   });
 
+  hljs.initHighlightingOnLoad();
+
+  $('.ah-tab-links__link').on('click', function() {
+    var trigger = $(this),
+        target = $(trigger.attr('href'));
+
+    target.show().siblings().hide();
+    trigger.addClass('ah-tab-links__link--active').siblings().removeClass('ah-tab-links__link--active');
+    return false
+  });
+
+  $('.ah-component__mod-title').on('click', function() {
+    var target = $(this).next(),
+        visible = target.is(":visible");
+    
+    target.slideToggle(!visible);
+
+    return false;
+  });
+
 });

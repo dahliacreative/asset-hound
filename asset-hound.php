@@ -8,7 +8,9 @@
     <script src="<?php echo $compiledJS ?>"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500" />
     <link rel="stylesheet" href="stylesheets/asset-hound.css" />
+    <link rel="stylesheet" href="stylesheets/highlight.css" />
     <script src="javascripts/clipboard.js"></script>
+    <script src="javascripts/highlight.js"></script>
     <script src="javascripts/asset-hound.js"></script>
   </head>
   <body>

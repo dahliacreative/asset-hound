@@ -11,8 +11,8 @@
   $componentsPath = $root . 'dummy-project/components/';
 
   // Compiled Files
-  $compiledCSS = $root . 'dummy-project/css/application.css';
-  $compiledJS = $root . 'dummy-project/js/application.js';
+  $compiledCSS = 'dummy-project/css/application.css';
+  $compiledJS = 'dummy-project/js/application.js';
 
   // Sass Files
   $showColors = true;

@@ -4,6 +4,7 @@
 ----------------------------------------------------------------------------------------------------
 ASSET HOUND CONFIG - Card
 ----------------------------------------------------------------------------------------------------
+background: #fefefe
 modifiers: ["small", "large"]
 data: {
     "title": "Card Title",
@@ -14,7 +15,7 @@ data: {
 ----------------------------------------------------------------------------------------------------
 */
 
-$modifier_classes = (is_array($modifiers) && count($modifiers) >=1 ? ' card--' . implode(' card--', $modifiers) : "");
+$modifier_classes = (is_array($modifiers) && count($modifiers) >=1 ? " card--" . implode(" card--", $modifiers) : "");
 ?>
 <!-- component -->
 <div class="card <?php echo $modifier_classes; ?>">
