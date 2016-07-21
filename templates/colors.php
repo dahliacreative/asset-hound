@@ -2,7 +2,7 @@
 use \Src\Parsers\Colors;
 
 $c = new Colors($sassPath, $colorsFile);
-$colors = $c->get();
+$colorsList = $c->get();
 ?>
 
 <section class="ah-section" id="ah-colors">
@@ -16,7 +16,7 @@ $colors = $c->get();
     </div>
   </div>
   <ul class="ah-grid">
-    <?php foreach($colors as $color) : ?>
+    <?php foreach($colorsList as $color) : ?>
       <li class="ah-grid__item">
         <div class="ah-color" data-hex="<?php echo $color["hex"] ?>" data-sass="<?php echo $color["sass"] ?>">
           <div data-text="copy" data-clipboard-text="<?php echo $color["sass"] ?>" class="ah-color__block" style="background-color: <?php echo $color["hex"] ?>;"></div>

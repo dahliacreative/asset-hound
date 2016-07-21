@@ -58,9 +58,11 @@ class Components
             $$componentElementVar = $componentElementValue;
         }
         $modifier_classes = '';
+        
         ob_start();
         eval(' ?>' . $this->returnData["markup"] . '<?php ');
-        $this->returnData["evalMarkup"] = ob_get_clean();
+        $evalMarkup = ob_get_clean();
+        $this->returnData["evalMarkup"] = $evalMarkup;
         
         $this->returnData["c5Include"] = '<?php $this->inc("' . $this->componentsPath . $this->file . '"); ?>';
 
@@ -68,10 +70,15 @@ class Components
         $this->modifiers = json_decode($this->matches[1], true);
         
         foreach($this->modifiers as $modifier) {
-            $modifier_classes = $this->title . "--" . $modifier;
+            
+            $modifier_classes = $this->title . "--" . $modifier;            
+            $c5Include = '<?php $this->inc("' . $this->componentsPath . $this->file . '", array("modifier_classes"=>"' . $modifier . '")); ?>';
+            
             ob_start();
             eval(' ?>' . $this->returnData["markup"] . '<?php ');
-            $this->returnData["modifiers"][] = array("modifier"=>$modifier, "evalMarkup"=>ob_get_clean());
+            $evalMarkup = ob_get_clean();
+            
+            $this->returnData["modifiers"][] = array("modifier"=>$modifier, "evalMarkup"=>$evalMarkup, "c5Include"=>$c5Include);
         }
         return $this->returnData;
     }
