@@ -1,14 +1,8 @@
 <?php
-  $file = fopen($sassPath.$colorsFile,"r") or die($sassPath.$colorsFile." does not exist.");
-  $colors = array();
-  while(! feof($file)) {
-    $line = fgets($file);
-    if($line) {
-      $vars = array_map('trim', explode(":", $line));
-      array_push($colors, $vars);
-    }
-  }
-  fclose($file);
+use \Src\Parsers\Colors;
+
+$c = new Colors($sassPath, $colorsFile);
+$colors = $c->get();
 ?>
 
 <section class="ah-section" id="ah-colors">
@@ -24,11 +18,11 @@
   <ul class="ah-grid">
     <?php foreach($colors as $color) : ?>
       <li class="ah-grid__item">
-        <div class="ah-color" data-hex="<?php echo $color[1] ?>" data-sass="<?php echo $color[0] ?>">
-          <div data-text="copy" data-clipboard-text="<?php echo $color[0] ?>" class="ah-color__block" style="background-color: <?php echo $color[1] ?>;"></div>
+        <div class="ah-color" data-hex="<?php echo $color["hex"] ?>" data-sass="<?php echo $color["sass"] ?>">
+          <div data-text="copy" data-clipboard-text="<?php echo $color["sass"] ?>" class="ah-color__block" style="background-color: <?php echo $color["hex"] ?>;"></div>
           <div class="ah-color__wrap">
-            <h4 class="ah-color__name"><?php echo str_replace("-", " ", str_replace("$", "", $color[0])) ?></h4>
-            <p class="ah-color__value"><code><?php echo $color[0]."<br>".$color[1] ?></code></p>
+            <h4 class="ah-color__name"><?php echo $color["name"] ?></h4>
+            <p class="ah-color__value"><code><?php echo $color["sass"]."<br>".$color["hex"] ?></code></p>
           </div>
         </div>
       </li>

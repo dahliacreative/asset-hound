@@ -21,14 +21,7 @@ class Components
         $fileSystemIterator = new \FileSystemIterator($this->componentsPath);
         $components = array();
         foreach($fileSystemIterator as $file) {
-            $this->title = $this->parseTitle($file->getFilename());
-            $component["class"] = $this->title;
-            $component["title"] = ucfirst($this->title);            
-            $this->file = $file->getFilename();
-            $data = $this->parseFile($file->getFilename());
-            $component = $component + $data;
-            
-            $components[] = $component;
+            $components[] = $this->parseFile($file);
         }
         return $components;             
     }
@@ -43,9 +36,15 @@ class Components
         return str_replace("_", " ", str_replace("-", " ", str_replace(".php", "", $fileName)));            
     }
     
-    private function parseFile()
+    private function parseFile($file)
     {
         $this->returnData = array();
+        
+        $this->title = $this->parseTitle($file->getFilename());
+        $this->returnData["class"] = $this->title;
+        $this->returnData["title"] = ucfirst($this->title);
+        $this->file = $file->getFilename();
+        
         $this->contents = file_get_contents($this->componentsPath . $this->file);
        
         preg_match("/data: {(.+)}/s", $this->contents, $this->matches);
@@ -58,9 +57,12 @@ class Components
         foreach($this->returnData["data"] as $componentElementVar=>$componentElementValue) {
             $$componentElementVar = $componentElementValue;
         }
+        $modifier_classes = '';
         ob_start();
         eval(' ?>' . $this->returnData["markup"] . '<?php ');
         $this->returnData["evalMarkup"] = ob_get_clean();
+        
+        $this->returnData["c5Include"] = '<?php $this->inc("' . $this->componentsPath . $this->file . '"); ?>';
 
         preg_match("/modifiers: (.+)/", $this->contents, $this->matches);
         $this->modifiers = json_decode($this->matches[1], true);

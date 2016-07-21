@@ -22,12 +22,16 @@ $componentsList = $c->get();
       <div class="ah-tab-links">
         <a href="#<?php echo $component["class"] ?>-example"" class="ah-tab-links__link ah-tab-links__link--active">Example</a>
         <a href="#<?php echo $component["class"] ?>-usage"" class="ah-tab-links__link">Usage</a>
+        <a href="#<?php echo $component["class"] ?>-markup"" class="ah-tab-links__link">Markup</a>
       </div>
       <div class="ah-tabs">
         <div class="ah-component__example" id="<?php echo $component["class"] ?>-example">
           <?php echo $component["evalMarkup"];?>
         </div>
         <div class="ah-component__usage" id="<?php echo $component["class"] ?>-usage">
+          <pre><code><?php echo trim(htmlspecialchars($component["c5Include"])); ?></code></pre>
+        </div>
+        <div class="ah-component__usage" id="<?php echo $component["class"] ?>-markup">
           <pre><code><?php echo trim(htmlspecialchars($component["evalMarkup"])); ?></code></pre>
         </div>
       </div>
@@ -41,10 +45,14 @@ $componentsList = $c->get();
             <div class="ah-tab-links">
               <a href="#<?php echo $component["class"]."-".$modifier["modifier"] ?>-example"" class="ah-tab-links__link ah-tab-links__link--active">Example</a>
               <a href="#<?php echo $component["class"]."-".$modifier["modifier"] ?>-usage"" class="ah-tab-links__link">Usage</a>
+              <a href="#<?php echo $component["class"]."-".$modifier["modifier"] ?>-markup"" class="ah-tab-links__link">Markup</a>
             </div>
             <div class="ah-tabs">
               <div class="ah-component__example" id="<?php echo $component["class"]."-".$modifier["modifier"] ?>-example">
                 <?php echo $modifier["evalMarkup"]; ?>
+              </div>
+              <div class="ah-component__usage" id="<?php echo $component["class"]."-".$modifier["modifier"] ?>-usage">
+                <pre><code><?php echo trim(htmlspecialchars($modifier["c5Include"])); ?></code></pre>
               </div>
               <div class="ah-component__usage" id="<?php echo $component["class"]."-".$modifier["modifier"] ?>-usage">
                 <pre><code><?php echo trim(htmlspecialchars($modifier["evalMarkup"])); ?></code></pre>

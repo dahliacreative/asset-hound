@@ -1,14 +1,14 @@
 <?php 
-  error_reporting(0);
   $root = dirname(__FILE__) . "/";
   include $root . 'src/Parsers/Components.php';
+  include $root . 'src/Parsers/Colors.php';
 
   // Project Name
   $projectName = 'Dummy Project';
   
   // Paths
   $sassPath = $root . 'dummy-project/sass/';
-  $componentsPath = $root . 'dummy-project/components/';
+  $componentsPath = 'dummy-project/components/';
 
   // Compiled Files
   $compiledCSS = 'dummy-project/css/application.css';
