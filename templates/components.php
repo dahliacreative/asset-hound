@@ -15,53 +15,71 @@ $componentsList = $c->get();
             $$var = $value;
         }
     ?>
-
-    <div class="ah-component" id="ah-<?php echo $component["class"]; ?>">
-      <h2 class="ah-component__title"><?php echo $component["title"]; ?></h2>
-      
-      <div class="ah-tab-links">
-        <a href="#<?php echo $component["class"]; ?>-example"" class="ah-tab-links__link ah-tab-links__link--active">Example</a>
-        <a href="#<?php echo $component["class"]; ?>-usage"" class="ah-tab-links__link">Usage</a>
-        <a href="#<?php echo $component["class"]; ?>-markup"" class="ah-tab-links__link">Markup</a>
-      </div>
-      <div class="ah-tabs">
-        <div class="ah-component__example" id="<?php echo $component["class"]; ?>-example">
-          <?php echo $component["evalMarkup"];?>
-        </div>
-        <div class="ah-component__usage" id="<?php echo $component["class"]; ?>-usage">
-          <pre><code><?php echo trim(htmlspecialchars($component["c5Include"])); ?></code></pre>
-        </div>
-        <div class="ah-component__usage" id="<?php echo $component["class"]; ?>-markup">
-          <pre><code><?php echo trim(htmlspecialchars($component["evalMarkup"])); ?></code></pre>
-        </div>
-      </div>
-
-      <h3 class="ah-component__sub-title">Modifiers</h3>
-
-      <?php foreach($component["modifiers"] as $modifier) : ?>
-        <h4 class="ah-component__mod-title"><?php echo "." . $component["class"] . "--" . $modifier["modifier"] ?></h4>
-        <div class="ah-modifier">
-          <div class="ah-modifier__wrap">
-            <div class="ah-tab-links">
-              <a href="#<?php echo $component["class"] . "-" . $modifier["modifier"]; ?>-example"" class="ah-tab-links__link ah-tab-links__link--active">Example</a>
-              <a href="#<?php echo $component["class"] . "-" . $modifier["modifier"]; ?>-usage"" class="ah-tab-links__link">Usage</a>
-              <a href="#<?php echo $component["class"] . "-" . $modifier["modifier"]; ?>-markup"" class="ah-tab-links__link">Markup</a>
-            </div>
-            <div class="ah-tabs">
-              <div class="ah-component__example" id="<?php echo $component["class" ]. "-" . $modifier["modifier"] ?>-example">
-                <?php echo $modifier["evalMarkup"]; ?>
-              </div>
-              <div class="ah-component__usage" id="<?php echo $component["class"] . "-" . $modifier["modifier"] ?>-usage">
-                <pre><code><?php echo trim(htmlspecialchars($modifier["c5Include"])); ?></code></pre>
-              </div>
-              <div class="ah-component__usage" id="<?php echo $component["class"] . "-" . $modifier["modifier"] ?>-markup">
-                <pre><code><?php echo trim(htmlspecialchars($modifier["evalMarkup"])); ?></code></pre>
-              </div>
-            </div>
+    <div class="ah-component" id="ah-<?php echo $component["class"] ?>">
+      <div class="ah-component__controls">
+        <div class="ah-component__title">
+          .<?php echo $component["class"]; ?>
+          <div class="ah-component__modifier-list">
+            <select>
+              <option value="<?php echo $component["class"]; ?>-default">--default</option>
+              <?php foreach($component["modifiers"] as $modifier) : ?>
+              <option value="<?php echo $component["class"]; ?>-<?php echo $modifier["modifier"] ?>">--<?php echo $modifier["modifier"] ?></option>
+              <?php endforeach; ?>
+            </select>
           </div>
         </div>
-      <?php endforeach; ?>
-
+        <div class="ah-tabs">
+          <a href="<?php echo $component["class"]; ?>-example" class="ah-tabs__link ah-tabs__link--active">
+            <img src="images/browser.svg" alt="" class="ah-tabs__icon">Example
+          </a>
+          <a href="<?php echo $component["class"]; ?>-usage" class="ah-tabs__link">
+            <img src="images/keyboard.svg" alt="" class="ah-tabs__icon">Usage
+          </a>
+          <a href="<?php echo $component["class"]; ?>-markup" class="ah-tabs__link">
+            <img src="images/code.svg" alt="" class="ah-tabs__icon">Markup
+          </a>
+          <a href="<?php echo $component["class"]; ?>-comments" class="ah-tabs__link">
+            <img src="images/message.svg" alt="" class="ah-tabs__icon">Comments
+          </a>
+        </div>
+      </div>
+      <div class="ah-component__tabs">
+        <div class="ah-component__tab" data-tab="<?php echo $component["class"]; ?>-example">
+          <div class="ah-component__modifier" data-modifier="<?php echo $component["class"]; ?>-default">
+            <?php echo $component["evalMarkup"];?>
+          </div>
+          <?php foreach($component["modifiers"] as $modifier) : ?>
+            <div class="ah-component__modifier" data-modifier="<?php echo $component["class"]; ?>-<?php echo $modifier["modifier"] ?>">
+              <?php echo $modifier["evalMarkup"]; ?>
+            </div>
+          <?php endforeach; ?>
+        </div>
+        <div class="ah-component__tab" data-tab="<?php echo $component["class"]; ?>-usage">
+          <div class="ah-component__modifier" data-modifier="<?php echo $component["class"]; ?>-default">
+            <pre><code><?php echo trim(htmlspecialchars($component["c5Include"])); ?></code></pre>
+          </div>
+          <?php foreach($component["modifiers"] as $modifier) : ?>
+            <div class="ah-component__modifier" data-modifier="<?php echo $component["class"]; ?>-<?php echo $modifier["modifier"] ?>">
+              <pre><code><?php echo trim(htmlspecialchars($modifier["c5Include"])); ?></code></pre>
+            </div>
+          <?php endforeach; ?>
+        </div>
+        <div class="ah-component__tab" data-tab="<?php echo $component["class"]; ?>-markup">
+          <div class="ah-component__modifier" data-modifier="<?php echo $component["class"]; ?>-default">
+            <pre><code><?php echo trim(htmlspecialchars($component["evalMarkup"])); ?></code></pre>
+          </div>
+          <?php foreach($component["modifiers"] as $modifier) : ?>
+            <div class="ah-component__modifier" data-modifier="<?php echo $component["class"]; ?>-<?php echo $modifier["modifier"] ?>">
+              <pre><code><?php echo trim(htmlspecialchars($modifier["evalMarkup"])); ?></code></pre>
+            </div>
+          <?php endforeach; ?>
+        </div>
+        <div class="ah-component__tab" data-tab="<?php echo $component["class"]; ?>-comments">
+          Comments
+        </div>
+      </div>
     </div>
   <?php endforeach; ?>
 </section>
+
+

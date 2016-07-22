@@ -1,7 +1,9 @@
 <header class="ah-header">
-      <div>
-        <h1 class="ah-header__title">Styleguide</h1>
-        <p class="ah-header__project"><?php echo $projectName; ?></p>
-      </div>
-      <img src="http://placehold.it/150x50" alt="">
-    </header>
+  <div class="ah-container">
+    <img src="images/logo.png" alt="Asset Hound" class="ah-header__logo">
+    <div class="ah-header__control">
+      <p class="ah-header__project"><?php echo $projectName; ?></p>
+      <button type="button" class="ah-menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>

@@ -17,13 +17,10 @@ $colorsList = $c->get();
   </div>
   <ul class="ah-grid">
     <?php foreach($colorsList as $color) : ?>
-      <li class="ah-grid__item">
-        <div class="ah-color" data-hex="<?php echo $color["hex"] ?>" data-sass="<?php echo $color["sass"] ?>">
-          <div data-text="copy" data-clipboard-text="<?php echo $color["sass"] ?>" class="ah-color__block" style="background-color: <?php echo $color["hex"] ?>;"></div>
-          <div class="ah-color__wrap">
-            <h4 class="ah-color__name"><?php echo $color["name"] ?></h4>
-            <p class="ah-color__value"><code><?php echo $color["sass"]."<br>".$color["hex"] ?></code></p>
-          </div>
+      <li class="ah-color ah-grid__item" style="background-color: <?php echo $color["hex"] ?>;" data-clipboard-text="<?php echo $color["sass"] ?>" data-hex="<?php echo $color["hex"] ?>" data-sass="<?php echo $color["sass"] ?>">
+        <div class="ah-color__wrap">
+          <h4 class="ah-color__name"><?php echo $color["name"] ?></h4>
+          <p class="ah-color__value"><code><?php echo $color["sass"]."<br>".$color["hex"] ?></code></p>
         </div>
       </li>
     <?php endforeach; ?>

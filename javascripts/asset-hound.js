@@ -3,37 +3,33 @@ $(function() {
   $('.ah-toggle__input').on('change', function() {
     var checked = $(this).prop('checked');
     if(checked) {
-      $('.ah-color__block').each(function() {
+      $('.ah-color').each(function() {
         var color = $(this),
-            value = color.closest('.ah-color').data('hex');
+            value = color.data('hex');
         color.attr('data-clipboard-text', value);
       });
     } else {
-      $('.ah-color__block').each(function() {
+      $('.ah-color').each(function() {
         var color = $(this),
-            value = color.closest('.ah-color').data('sass');
+            value = color.data('sass');
         color.attr('data-clipboard-text', value);
       });
     }
   });
 
-  var clip = new Clipboard('.ah-color__block');
+  var clip = new Clipboard('.ah-color');
   clip.on('success', function(e) {
     var trigger = $(e.trigger);
-    trigger.addClass('ah-color__block--copied');
-    trigger.attr('data-text', 'Copied');
+    trigger.addClass('ah-color--copied');
     setTimeout(function() {
-      trigger.removeClass('ah-color__block--copied');
-      setTimeout(function() {
-        trigger.attr('data-text', 'Copy');
-      }, 300);
-    }, 3000);
+      trigger.removeClass('ah-color--copied');
+    }, 2000);
   });
 
   $('.ah-navigation__link').on('click', function() {
     var trigger = $(this),
         target = $(trigger.attr('href')),
-        offset = target.offset().top - 90;
+        offset = target.offset().top - 190;
 
     $('html, body').animate({ scrollTop: offset });
     
@@ -42,12 +38,16 @@ $(function() {
 
   hljs.initHighlightingOnLoad();
 
-  $('.ah-tab-links__link').on('click', function() {
-    var trigger = $(this),
-        target = $(trigger.attr('href'));
+  $('.ah-component__modifier-list select').on('change', function() {
+    var modifier = this.value;
+    $('[data-modifier="' + modifier + '"]').show().siblings().hide();
+  });
 
-    target.show().siblings().hide();
-    trigger.addClass('ah-tab-links__link--active').siblings().removeClass('ah-tab-links__link--active');
+  $('.ah-tabs__link').on('click', function() {
+    var trigger = $(this),
+        target = trigger.attr('href');
+    $('[data-tab="' + target + '"]').show().siblings().hide();
+    trigger.addClass('ah-tabs__link--active').siblings().removeClass('ah-tabs__link--active');
     return false
   });
 
@@ -58,6 +58,10 @@ $(function() {
     target.slideToggle(!visible);
 
     return false;
+  });
+
+  $('.ah-menu').on('click', function() {
+    $('body').toggleClass('nav-open');
   });
 
 });

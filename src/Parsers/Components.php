@@ -72,7 +72,7 @@ class Components
         foreach($this->modifiers as $modifier) {
             
             $modifier_classes = $this->title . "--" . $modifier;            
-            $c5Include = '<?php $this->inc("' . $this->componentsPath . $this->file . '", array("modifier_classes"=>array("' . $modifier . '"))); ?>';
+            $c5Include = '<?php $this->inc("' . $this->componentsPath . $this->file . '", array("modifiers"=>array("' . $modifier . '"))); ?>';
             
             ob_start();
             eval(' ?>' . $this->returnData["markup"] . '<?php ');
