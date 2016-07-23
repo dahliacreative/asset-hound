@@ -5,7 +5,6 @@
 ASSET HOUND CONFIG - Card
 ----------------------------------------------------------------------------------------------------
 background: #fefefe
-modifiers: ["small", "large"]
 data: {
     "title": "Card Title",
     "copy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, pariatur!",

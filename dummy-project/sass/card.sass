@@ -1,0 +1,193 @@
+// --------------------------------------------------------------------------
+// Theme
+// --------------------------------------------------------------------------
+
+// Default
+$content-bg-color: $white
+$content-title-color: $color-brand-dark
+
+// --dark
+$dark-content-bg-color: $mako
+$dark-content-color: $white
+
+// --support
+$support-title-bg-color: $mako
+$support-title-color: $white
+$support-copy-color: $mako
+
+// --document
+$document-content-bg-color: $color-brand-light
+$document-content-color: $white
+$document-title-color: $white
+$document-media-bg-color: $white
+$document-button-hover-color: shade($color-brand-dark, 25%)
+$document-shadow-color: #dce0e5
+
+
+// --------------------------------------------------------------------------
+// Default Card
+// --------------------------------------------------------------------------
+
+.card
+    +display(flex)
+    line-height: 1.4
+    max-width: 100%
+
+    &--no-link
+        +flex-direction(column)
+
+    > a
+        +display(flex)
+        +flex(1)
+        +flex-direction(column)
+        color: $base-font-color
+        text-decoration: none
+        width: 100%
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+            &,
+            .card__content,
+            .card__media-wrap
+                +flex(none)
+
+        +hover
+            .card__content
+                +transform(translateY(-10px))
+                box-shadow: 0 10px 0 $color-brand-light
+
+    &__media
+        +flex(none)
+        display: block
+        width: 100%
+    
+    &__content
+        +display(flex)
+        +flex(1)
+        +flex-direction(column)
+        +transition(0.3s $base-easing)
+        background-color: $content-bg-color
+        box-sizing: border-box
+        padding: spacing(3)
+        position: relative
+        width: 100%
+
+
+        > *
+            +flex(none)
+
+        .date,
+        .button
+            margin-top: auto
+
+        .button
+            +align-self(flex-start)
+
+    &__title
+        +heading(2, $content-title-color)
+        margin: 0 0 spacing(1.6)
+        line-height: 1.2
+        &:last-child
+            margin-bottom: 0
+
+    &__subtitle
+        margin: 0 0 10px
+        font-weight: bold
+
+    &__copy
+        margin: 0 0 spacing(1.6)
+        &:last-child
+            margin-bottom: 0
+
+
+    // ----------------------------------------------------------------------
+    // Dark Card
+    // ----------------------------------------------------------------------
+
+    &--dark &
+
+        &__content
+            background-color: $dark-content-bg-color
+            color: $dark-content-color
+
+        &__title
+            color: $dark-content-color
+
+
+    // ----------------------------------------------------------------------
+    // Support Item Card
+    // ----------------------------------------------------------------------
+
+    &--support &
+
+        &__content
+            padding: 0
+
+        &__title
+            background-color: $support-title-bg-color
+            color: $support-title-color
+            margin: 0
+            padding: spacing(2) spacing(3)
+
+        &__copy
+            color: $support-copy-color
+            padding: spacing(3)
+
+
+    // ----------------------------------------------------------------------
+    // Document Card
+    // ----------------------------------------------------------------------
+
+    &--document 
+        +display(flex)
+        box-shadow: 0 0 30px $document-shadow-color
+
+        .card
+        
+            &__content
+                +flex(1)
+                background-color: $document-content-bg-color
+                color: $document-content-color
+                padding: spacing(2)
+
+            &__title
+                color: $document-title-color
+
+            &__media-wrap
+                background-color: $document-media-bg-color
+                box-sizing: border-box
+                padding: 35px 30px
+                width: 210px
+
+                img
+                    display: block
+                    margin: 0 auto
+                    width: 150px
+
+        .no-touchevents & .button:hover,
+        .touchevents & .button:active,
+        .button:focus
+            background-color: $document-button-hover-color
+
+
+// --------------------------------------------------------------------------
+// Mobile Card
+// --------------------------------------------------------------------------
++breakpoint(medium)
+    .card
+
+        // ------------------------------------------------------------------
+        // Document Card
+        // ------------------------------------------------------------------
+
+        &--document
+            display: block
+            box-shadow: 0 0 10px $document-shadow-color
+
+            .card
+
+                &__media-wrap
+                    width: auto
+
+            .button
+                box-sizing: border-box
+                display: block
+                width: 100%

@@ -1,7 +1,7 @@
 <?php
 use \Src\Parsers\Components;
 
-$c = new Components($componentsPath);
+$c = new Components($componentsPath, $sassPath);
 $componentsList = $c->get();
 ?>
 
@@ -75,7 +75,7 @@ $componentsList = $c->get();
           <?php endforeach; ?>
         </div>
         <div class="ah-component__tab" data-tab="<?php echo $component["class"]; ?>-comments">
-          Comments
+          <pre><code><?php echo trim(htmlspecialchars($component["comments"])); ?></code></pre>
         </div>
       </div>
     </div>
