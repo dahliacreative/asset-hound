@@ -58,15 +58,15 @@ class Components
         // COMPONENT CODE        
         preg_match("/\<\!-- component --\>(.+)\<\!-- \/component --\>/s", $contents, $matches);
         $returnData["markup"] = $matches[1];
-        $returnData["evalMarkup"] = $this->evalMarkup($returnData["data"], $returnData["markup"]);
+        $returnData["evalMarkup"] = $this->evalMarkup($returnData["data"], $contents);
         $returnData["c5Include"] = $this->getC5Include($filename);
         
         // MODIFIERS        
         $modifiers = $this->parseSass($title);        
         foreach($modifiers as $modifier) {            
-            $modifierClasses = $title . "--" . $modifier;            
+            $modifiers = $title . "--" . $modifier;            
             $c5Include = $this->getC5Include($filename, $modifier);
-            $evalMarkup = $this->evalMarkup($returnData["data"], $returnData["markup"], $modifierClasses);            
+            $evalMarkup = $this->evalMarkup($returnData["data"], $contents, $modifiers);            
             $returnData["modifiers"][] = array("modifier"=>$modifier, "evalMarkup"=>$evalMarkup, "c5Include"=>$c5Include);
         }
         return $returnData;
@@ -84,7 +84,7 @@ class Components
         return $modifiers;
     }
     
-    private function evalMarkup($data, $markup, $modifier_classes="")
+    private function evalMarkup($data, $markup, $modifiers=array())
     {
         foreach($data as $componentElementVar=>$componentElementValue) {
             $$componentElementVar = $componentElementValue;
