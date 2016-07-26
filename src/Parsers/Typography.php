@@ -20,18 +20,15 @@ class Typography
         
         $modifiers = preg_split("/\.(.+)/", $contents);
 
-        foreach($matches[0] as $key=>$item) {            
+        foreach($matches[0] as $key=>$item) {           
             $matchString = "/\&--(.+)/";
             preg_match_all($matchString, $modifiers[$key+1], $modifiersMatches);
             $modifiersList = array();
-            foreach($modifiersMatches[1] as $key=>$modifier) {
+            foreach($modifiersMatches[1] as $modifier) {
                 $modifiersList[] = trim($modifier);
             }
-            $typograghyList[] = array("class"=>$item, "name"=>$matches[1][$key], "modifiers"=>$modifiersList);
+            $typograghyList[] = array("class"=>str_replace("\n", "", trim($item)), "name"=>str_replace("\n", "", trim($matches[1][$key])), "modifiers"=>$modifiersList);
         }
-        
-        var_dump($typograghyList);
-        
         return $typograghyList;
     }
 }

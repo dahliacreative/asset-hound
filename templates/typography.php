@@ -47,7 +47,7 @@ $typographyList = $c->get();
             </div>
             <?php foreach($item["modifiers"] as $modifier) : ?>
                 <div class="ah-component__modifier" data-modifier="<?php echo $item["name"]; ?>-<?php echo $modifier; ?>">
-                  <pre><code><?php echo trim(htmlspecialchars('<h1 class="' . $item["class"] . ' ' . $item["class"] . '-' . $modifier . '">Heading</h1>')); ?></code></pre>
+                  <pre><code><?php echo trim(htmlspecialchars('<h1 class="' . $item["name"] . ' ' . $item["name"] . '--' . $modifier . '">Heading</h1>')); ?></code></pre>
                 </div>
             <?php endforeach; ?>
           </div>
