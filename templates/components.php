@@ -18,12 +18,11 @@ $componentsList = $c->get();
     <div class="ah-component" id="ah-<?php echo $component["class"] ?>">
       <div class="ah-component__controls">
         <div class="ah-component__title">
-          .<?php echo $component["class"]; ?>
           <div class="ah-component__modifier-list">
             <select>
-              <option value="<?php echo $component["class"]; ?>-default">--default</option>
+              <option value="<?php echo $component["class"]; ?>-default">.<?php echo $component["class"]; ?></option>
               <?php foreach($component["modifiers"] as $modifier) : ?>
-              <option value="<?php echo $component["class"]; ?>-<?php echo $modifier["modifier"] ?>">--<?php echo $modifier["modifier"] ?></option>
+                <option value="<?php echo $component["class"]; ?>-<?php echo $modifier["modifier"] ?>">.<?php echo $component["class"]; ?>--<?php echo $modifier["modifier"] ?></option>
               <?php endforeach; ?>
             </select>
           </div>
