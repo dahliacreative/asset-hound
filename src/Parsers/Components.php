@@ -64,7 +64,7 @@ class Components
         // MODIFIERS        
         $modifiers = $this->parseSass($title);        
         foreach($modifiers as $modifier) {            
-            $modifiers = $title . "--" . $modifier;            
+            $modifiers = array($modifier);            
             $c5Include = $this->getC5Include($filename, $modifier);
             $evalMarkup = $this->evalMarkup($returnData["data"], $contents, $modifiers);            
             $returnData["modifiers"][] = array("modifier"=>$modifier, "evalMarkup"=>$evalMarkup, "c5Include"=>$c5Include);
