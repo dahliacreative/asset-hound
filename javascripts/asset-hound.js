@@ -31,6 +31,9 @@ $(function() {
         target = $(trigger.attr('href')),
         offset = target.offset().top - 190;
 
+    $('.ah-navigation__link--active').removeClass('ah-navigation__link--active');
+    trigger.addClass('ah-navigation__link--active');
+
     $('html, body').animate({ scrollTop: offset });
     
     return false;
