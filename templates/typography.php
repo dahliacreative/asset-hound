@@ -33,21 +33,25 @@ $typographyList = $c->get();
         <div class="ah-component__tabs">
           <div class="ah-component__tab" data-tab="<?php echo $item["name"]; ?>-example">
             <div class="ah-component__modifier" data-modifier="<?php echo $item["name"]; ?>-default">
-              <h1 class="<?php echo $item["class"]; ?>">Heading</h1>
+              <div contenteditable spellcheck="false">
+                <h1 class="<?php echo $item["name"]; ?>">Lorem ipsum dolor sit amet.</h1>
+              </div>
             </div>
             <?php foreach($item["modifiers"] as $modifier) : ?>
               <div class="ah-component__modifier" data-modifier="<?php echo $item["name"]; ?>-<?php echo $modifier; ?>">
-                <h1 class="<?php echo $item["name"]; ?> <?php echo $item["name"]; ?>--<?php echo $modifier; ?>">Heading</h1>
+                <div contenteditable spellcheck="false">
+                  <h1 class="<?php echo $item["name"]; ?> <?php echo $item["name"]; ?>--<?php echo $modifier; ?>" >Lorem ipsum dolor sit amet.</h1>
+                </div>
               </div>
             <?php endforeach; ?>
           </div>
           <div class="ah-component__tab" data-tab="<?php echo $item["name"]; ?>-markup">
             <div class="ah-component__modifier" data-modifier="<?php echo $item["name"]; ?>-default">
-              <pre><code><?php echo trim(htmlspecialchars('<h1 class="' . $item["name"] . '">Heading</h1>')); ?></code></pre>
+              <pre><code><?php echo trim(htmlspecialchars('<h1 class="' . $item["name"] . '">Lorem ipsum dolor sit amet.</h1>')); ?></code></pre>
             </div>
             <?php foreach($item["modifiers"] as $modifier) : ?>
                 <div class="ah-component__modifier" data-modifier="<?php echo $item["name"]; ?>-<?php echo $modifier; ?>">
-                  <pre><code><?php echo trim(htmlspecialchars('<h1 class="' . $item["name"] . ' ' . $item["name"] . '--' . $modifier . '">Heading</h1>')); ?></code></pre>
+                  <pre><code><?php echo trim(htmlspecialchars('<h1 class="' . $item["name"] . ' ' . $item["name"] . '--' . $modifier . '">Lorem ipsum dolor sit amet.</h1>')); ?></code></pre>
                 </div>
             <?php endforeach; ?>
           </div>
