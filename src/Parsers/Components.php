@@ -51,9 +51,13 @@ class Components
         }
         
         // GET THE SAMPLE DATA       
-        preg_match("/data: {(.+)}/s", $returnData["comments"], $matches);
+        preg_match("/assetHoundData: {(.+)}/s", $returnData["comments"], $matches);
         $data = "{" . $matches[1] . "}";
         $returnData["data"] = json_decode($data, true);
+
+        // GET COLUMNS
+        preg_match("/assetHoundColumns: ([0-9])/", $contents, $results);
+        $returnData["columns"] = $results[1] === null ? 1 : intval($results[1]);
         
         // COMPONENT CODE        
         preg_match("/\<\!-- component --\>(.+)\<\!-- \/component --\>/s", $contents, $matches);

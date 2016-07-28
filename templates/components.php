@@ -45,11 +45,23 @@ $componentsList = $c->get();
       <div class="ah-component__tabs">
         <div class="ah-component__tab" data-tab="<?php echo $component["class"]; ?>-example">
           <div class="ah-component__modifier" data-modifier="<?php echo $component["class"]; ?>-default">
-            <?php echo $component["evalMarkup"];?>
+            <div class="ah-grid ah-grid--wrap">
+              <?php for ($i=0; $i < $component["columns"]; $i++) : ?>
+                <div class="ah-grid__item">
+                  <?php echo $component["evalMarkup"];?>
+                </div>
+              <?php endfor ?>
+            </div>
           </div>
           <?php foreach($component["modifiers"] as $modifier) : ?>
             <div class="ah-component__modifier" data-modifier="<?php echo $component["class"]; ?>-<?php echo $modifier["modifier"] ?>">
-              <?php echo $modifier["evalMarkup"]; ?>
+              <div class="ah-grid ah-grid--wrap">
+                <?php for ($i=0; $i < $component["columns"]; $i++) : ?>
+                  <div class="ah-grid__item">
+                    <?php echo $modifier["evalMarkup"]; ?>
+                  </div>
+                <?php endfor ?>
+              </div>
             </div>
           <?php endforeach; ?>
         </div>

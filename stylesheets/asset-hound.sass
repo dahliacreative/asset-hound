@@ -210,6 +210,13 @@ body
       &:hover
         +flex(5)
 
+    &--wrap
+      +flex-wrap(wrap)
+      margin: 0 -20px -20px 0
+      .ah-grid__item
+        +flex(1)
+        margin: 0 20px 20px 0
+
   &-color
     color: $color-base-light
     cursor: pointer

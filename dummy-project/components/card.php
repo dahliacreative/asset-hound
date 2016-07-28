@@ -1,10 +1,8 @@
 <?php
 
 /*
-----------------------------------------------------------------------------------------------------
-ASSET HOUND CONFIG - Card
-----------------------------------------------------------------------------------------------------
-data: {
+assetHoundColumns: 3,
+assetHoundData: {
     "title": "Card Title",
     "subtitle": "Sub title",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, pariatur!",
@@ -14,7 +12,6 @@ data: {
     "image_alt": "Image Alt",
     "date": "10/02/2016"
 }
-----------------------------------------------------------------------------------------------------
 */
 
 $modifier_classes = (is_array($modifiers) && count($modifiers) >=1 ? " card--" . implode(" card--", $modifiers) : "");
