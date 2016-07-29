@@ -20,6 +20,9 @@ $typographyList = $c->get();
                 <?php endforeach; ?>
               </select>
             </div>
+            <div class="ah-component__tag">
+              <input type="text" value="h1" data-tag="h1"/>
+            </div>
           </div>
           <div class="ah-tabs">
             <a href="<?php echo $item["name"]; ?>-example" class="ah-tabs__link ah-tabs__link--active">
@@ -33,13 +36,13 @@ $typographyList = $c->get();
         <div class="ah-component__tabs">
           <div class="ah-component__tab" data-tab="<?php echo $item["name"]; ?>-example">
             <div class="ah-component__modifier" data-modifier="<?php echo $item["name"]; ?>-default">
-              <div contenteditable spellcheck="false">
+              <div contenteditable spellcheck="false" class="editor" data-edit="<?php echo $item["name"]; ?>-default">
                 <h1 class="<?php echo $item["name"]; ?>">Lorem ipsum dolor sit amet.</h1>
               </div>
             </div>
             <?php foreach($item["modifiers"] as $modifier) : ?>
               <div class="ah-component__modifier" data-modifier="<?php echo $item["name"]; ?>-<?php echo $modifier; ?>">
-                <div contenteditable spellcheck="false">
+                <div contenteditable spellcheck="false" class="editor" data-edit="<?php echo $item["name"]; ?>-<?php echo $modifier; ?>">
                   <h1 class="<?php echo $item["name"]; ?> <?php echo $item["name"]; ?>--<?php echo $modifier; ?>" >Lorem ipsum dolor sit amet.</h1>
                 </div>
               </div>
@@ -47,11 +50,11 @@ $typographyList = $c->get();
           </div>
           <div class="ah-component__tab" data-tab="<?php echo $item["name"]; ?>-markup">
             <div class="ah-component__modifier" data-modifier="<?php echo $item["name"]; ?>-default">
-              <pre><code><?php echo trim(htmlspecialchars('<h1 class="' . $item["name"] . '">Lorem ipsum dolor sit amet.</h1>')); ?></code></pre>
+              <pre><code data-edit-update="<?php echo $item["name"]; ?>-default"><?php echo trim(htmlspecialchars('<h1 class="' . $item["name"] . '">Lorem ipsum dolor sit amet.</h1>')); ?></code></pre>
             </div>
             <?php foreach($item["modifiers"] as $modifier) : ?>
                 <div class="ah-component__modifier" data-modifier="<?php echo $item["name"]; ?>-<?php echo $modifier; ?>">
-                  <pre><code><?php echo trim(htmlspecialchars('<h1 class="' . $item["name"] . ' ' . $item["name"] . '--' . $modifier . '">Lorem ipsum dolor sit amet.</h1>')); ?></code></pre>
+                  <pre><code  data-edit-update="<?php echo $item["name"]; ?>-<?php echo $modifier; ?>"><?php echo trim(htmlspecialchars('<h1 class="' . $item["name"] . ' ' . $item["name"] . '--' . $modifier . '">Lorem ipsum dolor sit amet.</h1>')); ?></code></pre>
                 </div>
             <?php endforeach; ?>
           </div>

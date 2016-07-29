@@ -1,7 +1,7 @@
 <?php
 
 /*
-assetHoundColumns: 3,
+assetHoundColumns: 2,
 assetHoundData: {
     "title": "Card Title",
     "subtitle": "Sub title",

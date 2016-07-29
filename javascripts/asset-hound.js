@@ -1,5 +1,14 @@
 $(function() {
 
+  function escapeHtml(unsafe) {
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+  }
+
   $('.ah-toggle__input').on('change', function() {
     var checked = $(this).prop('checked');
     if(checked) {
@@ -65,6 +74,36 @@ $(function() {
 
   $('.ah-menu').on('click', function() {
     $('body').toggleClass('nav-open');
+  });
+
+  $('.editor').on('input', function() {
+    var code = $(this).data('edit'),
+        update = $(this).html();
+        target = $('[data-edit-update="' + code + '"]');
+
+    target.html(escapeHtml(update).trim());
+    hljs.highlightBlock(target[0]);
+  });
+
+  $('.ah-component__tag input').on('change', function() {
+    var input = $(this),
+        editor = input.closest('.ah-component').find('.editor'),
+        currentTag =  input.attr('data-tag'),
+        newTag = input.val();
+
+        input.attr('data-tag', newTag);
+
+        console.log(currentTag);
+
+    editor.each(function() {
+      var editor = $(this),
+          html = editor.html(),
+          newHtml = html.replace('<' + currentTag, '<' +newTag),
+          newHtml = newHtml.replace(currentTag + '>', newTag + '>');
+
+      input.attr('data-tag', newTag).val(newTag);
+      editor.html(newHtml.trim()).trigger('input');
+    });
   });
 
 });
