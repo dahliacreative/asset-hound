@@ -482,6 +482,21 @@ body {
         border: none;
         padding: 0 28px 0 0;
         outline: none; }
+    .ah-component__tag {
+      margin: 0 0 0 auto;
+      color: #f2e3da; }
+      .ah-component__tag + .ah-tabs {
+        margin-left: 20px; }
+      .ah-component__tag label {
+        margin-right: 10px; }
+      .ah-component__tag input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px dotted #f2e3da;
+        color: #f2e3da;
+        outline: none;
+        padding: 5px 0;
+        width: auto; }
     .ah-component__modifier {
       display: none; }
       .ah-component__modifier:first-child {
@@ -527,6 +542,7 @@ body {
       text-transform: uppercase;
       color: #f2e3da;
       text-decoration: none;
+      outline: none;
       position: relative; }
       .ah-tabs__link:last-child {
         border-right: none; }

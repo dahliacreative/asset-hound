@@ -20,9 +20,10 @@ $typographyList = $c->get();
                 <?php endforeach; ?>
               </select>
             </div>
-            <div class="ah-component__tag">
-              <input type="text" value="h1" data-tag="h1"/>
-            </div>
+          </div>
+          <div class="ah-component__tag">
+            <label>Example Tag:</label>
+            <<input type="text" value="h1" data-tag="h1" size="2"/>/>
           </div>
           <div class="ah-tabs">
             <a href="<?php echo $item["name"]; ?>-example" class="ah-tabs__link ah-tabs__link--active">

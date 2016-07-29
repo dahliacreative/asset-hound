@@ -302,6 +302,22 @@ body
         padding: 0 28px 0 0
         outline: none
 
+    &__tag
+      margin: 0 0 0 auto
+      color: $color-base-light
+      + .ah-tabs
+        margin-left: 20px
+      label
+        margin-right: 10px
+      input
+        background-color: transparent
+        border: none
+        border-bottom: 1px dotted $color-base-light
+        color: $color-base-light
+        outline: none
+        padding: 5px 0
+        width: auto
+
     &__modifier
       display: none
       &:first-child
@@ -328,6 +344,7 @@ body
       text-transform: uppercase
       color: $color-base-light
       text-decoration: none
+      outline: none
       position: relative
       &:last-child
         border-right: none

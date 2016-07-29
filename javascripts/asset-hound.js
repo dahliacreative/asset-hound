@@ -85,6 +85,15 @@ $(function() {
     hljs.highlightBlock(target[0]);
   });
 
+  $('.ah-component__tag input').on('focus', function() {
+    $(this).select();
+  });
+
+  $('.ah-component__tag input').on('keyup', function() {
+    console.log('up')
+    $(this).attr('size', $(this).val().length)
+  });
+
   $('.ah-component__tag input').on('change', function() {
     var input = $(this),
         editor = input.closest('.ah-component').find('.editor'),
@@ -92,8 +101,6 @@ $(function() {
         newTag = input.val();
 
         input.attr('data-tag', newTag);
-
-        console.log(currentTag);
 
     editor.each(function() {
       var editor = $(this),
