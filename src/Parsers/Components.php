@@ -68,9 +68,9 @@ class Components
         // MODIFIERS        
         $modifiers = $this->parseSass($title);        
         foreach($modifiers as $modifier) {            
-            $modifiers = array($modifier);            
+            $modifiers = $modifier;            
             $c5Include = $this->getC5Include($filename, $modifier);
-            $evalMarkup = $this->evalMarkup($returnData["data"], $contents, $modifiers);            
+            $evalMarkup = $this->evalMarkup($returnData["data"], $contents, $modifiers);          
             $returnData["modifiers"][] = array("modifier"=>$modifier, "evalMarkup"=>$evalMarkup, "c5Include"=>$c5Include);
         }
         return $returnData;
@@ -88,11 +88,17 @@ class Components
         return $modifiers;
     }
     
-    private function evalMarkup($data, $markup, $modifiers=array())
+    private function evalMarkup($data, $markup, $modifierName="")
     {
         foreach($data as $componentElementVar=>$componentElementValue) {
             $$componentElementVar = $componentElementValue;
         }
+        if(isset($data["modifiers"][$modifierName])) {
+            foreach($data["modifiers"][$modifierName] as $componentElementVar=>$componentElementValue) {
+                $$componentElementVar = $componentElementValue;
+            }
+        }
+        $modifiers = array($modifierName);
         ob_start();
         eval(' ?>' . $markup . '<?php ');
         return ob_get_clean();

@@ -10,7 +10,17 @@ assetHoundData: {
     "linkText": "Read more",
     "image_src": "http://placehold.it/200",
     "image_alt": "Image Alt",
-    "date": "10/02/2016"
+    "date": "10/02/2016",
+    "modifiers": {
+        "dark": {
+            "title": "Card title dark",
+            "image_src": "http://placehold.it/300"
+        },
+        "support": {
+            "title": "Some support title",
+            "date": false
+        }
+    }
 }
 */
 
