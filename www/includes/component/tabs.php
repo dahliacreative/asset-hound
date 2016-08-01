@@ -18,7 +18,11 @@
 
     <div class="ah-tabs__tab" id="<?php echo $component["class"]; ?>-usage">
         <div class="ah-component__modifier" data-ah-modifier="ah-<?php echo $component["class"]; ?>-default">
-            <pre><code><?php echo trim(htmlspecialchars($component["c5Include"])); ?></code></pre>
+            <div class="ah-snippet">
+                <pre><code><?php echo trim(htmlspecialchars($component["c5Include"])); ?></code></pre>
+                <textarea class="ah-snippet__code"><?php echo trim(htmlspecialchars($component["c5Include"])); ?></textarea>
+                <button type="button" class="ah-button" data-behaviour="ah-copy-code">Copy</button>
+            </div>
         </div>
         <?php 
             foreach($component["modifiers"] as $modifier) {
@@ -29,7 +33,11 @@
 
     <div class="ah-tabs__tab" id="<?php echo $component["class"]; ?>-markup">
         <div class="ah-component__modifier" data-ah-modifier="ah-<?php echo $component["class"]; ?>-default">
-            <pre><code><?php echo trim(htmlspecialchars($component["evalMarkup"])); ?></code></pre>
+            <div class="ah-snippet">
+                <pre><code><?php echo trim(htmlspecialchars($component["evalMarkup"])); ?></code></pre>
+                <textarea class="ah-snippet__code"><?php echo trim(htmlspecialchars($component["evalMarkup"])); ?></textarea>
+                <button type="button" class="ah-button" data-behaviour="ah-copy-code">Copy</button>
+            </div>
         </div>
         <?php 
             foreach($component["modifiers"] as $modifier) {

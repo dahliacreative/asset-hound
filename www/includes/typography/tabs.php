@@ -14,7 +14,11 @@
 
     <div class="ah-tabs__tab" id="<?php echo $item["name"]; ?>-markup">
         <div class="ah-component__modifier" data-ah-modifier="ah-<?php echo $item["name"]; ?>-default">
-            <pre><code data-ah-editor="ah-<?php echo $item["name"]; ?>-default"><?php echo trim(htmlspecialchars('<h1 class="' . $item["name"] . '">Lorem ipsum dolor sit amet.</h1>')); ?></code></pre>
+            <div class="ah-snippet">
+                <pre><code data-ah-editor="ah-<?php echo $item["name"]; ?>-default"><?php echo trim(htmlspecialchars('<h1 class="' . $item["name"] . '">Lorem ipsum dolor sit amet.</h1>')); ?></code></pre>
+                <textarea class="ah-snippet__code"><?php echo trim(htmlspecialchars('<h1 class="' . $item["name"] . '">Lorem ipsum dolor sit amet.</h1>')); ?></textarea>
+                <button type="button" class="ah-button" data-behaviour="ah-copy-code">Copy</button>
+            </div>
         </div>
         <?php 
             foreach($item["modifiers"] as $modifier) {
