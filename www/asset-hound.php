@@ -18,12 +18,12 @@
       <?php include 'includes/navigation.php' ?>
       <div class="ah-page">
         <?php if($showColors) : ?>
-          <?php include $root.'templates/colors.php' ?>
+          <?php include $root.'views/colors.php' ?>
         <?php endif; ?>
         <?php if($showTypography) : ?>
-          <?php include $root.'templates/typography.php' ?>
+          <?php include $root.'views/typography.php' ?>
         <?php endif; ?>
-        <?php include $root.'templates/components.php' ?>
+        <?php include $root.'views/components.php' ?>
       </div>
     </div>
 
