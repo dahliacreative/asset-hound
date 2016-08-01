@@ -15,5 +15,3 @@ $componentsList = $c->get();
         } 
     ?>
 </section>
-
-
