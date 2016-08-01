@@ -1,0 +1,32 @@
+.ah-navigation
+    +position(fixed, 0px 0px 0px null)
+    background-color: $color-base
+    font-family: $base-font-family
+    font-size: $base-font-size
+    padding-top: 96px
+    width: 240px
+
+    &__list
+        border-bottom: 1px solid rgba($color-base-light, 0.1)
+        list-style: none
+        margin: 0
+        padding: 0
+        &--sub
+            border-bottom: none
+            .ah-navigation__link
+                font-size: 11px
+                padding: 10px 10px 10px 40px
+
+    &__link
+        +transition(background-color 0.3s, border-color 0.3s)
+        border-top: 1px solid rgba($color-base-light, 0.1)
+        color: $color-base-light
+        display: block
+        padding: 20px
+        text-decoration: none
+        text-transform: uppercase
+
+        &:hover,
+        &--active
+            background-color: $color-brand
+            border-color: $color-brand-dark

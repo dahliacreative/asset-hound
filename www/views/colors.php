@@ -20,7 +20,7 @@ $colorsList = $c->get();
     <ul class="ah-grid">
         <?php 
             foreach ($colorsList as $color) {
-                include $root.'includes/color.php';
+                include $root.'includes/color/index.php';
             } 
         ?>
     </ul>

@@ -1,0 +1,40 @@
+.ah-menu
+    background-color: transparent
+    border: none
+    cursor: pointer
+    margin-left: 20px
+    outline: none
+    padding: 0
+    position: relative
+
+    &:before,
+    &:after,
+    span
+        +size(30px 3px)
+        background-color: $color-base-light
+        border-radius: 3px
+        content: ""
+        display: block
+
+    &:before
+        margin-bottom: 13px
+
+    &:before,
+    &:after
+        +transition(opacity 0.75s 0.25s)
+
+    span
+        +position(absolute, 50% null null 0px)
+        +transition(transform 0.5s $ease-in-out-quint)
+        margin-top: -1px
+
+    .nav-open &
+        &:before,
+        &:after
+            +transition(opacity 0.5s)
+            opacity: 0
+        span
+            +transform(rotate(-45deg))
+            +transition(transform 0.75s $ease-in-out-quint)
+            &:last-of-type
+                +transform(rotate(45deg))

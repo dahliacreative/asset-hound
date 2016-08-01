@@ -1,7 +1,7 @@
 
 'use strict';
 
-var RN = window.RN || {};
+var AH = window.AH || {};
 
 function byBehaviour(selector) {
   return $('[data-behaviour="' + selector + '"]');

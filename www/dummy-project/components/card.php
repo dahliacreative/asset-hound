@@ -1,7 +1,7 @@
 <?php
 
 /*
-assetHoundColumns: 2,
+assetHoundColumns: 3,
 assetHoundData: {
     "title": "Card Title",
     "subtitle": "Sub title",
@@ -28,7 +28,7 @@ assetHoundData: {
 $modifier_classes = (is_array($modifiers) && count($modifiers) >=1 ? " card--" . implode(" card--", $modifiers) : "");
 ?>
 <!-- component -->
-<article class="card <?php echo $modifier_classes; ?>">
+<article class="card<?php echo $modifier_classes; ?>">
     <?php if($href) : ?>
     <a href="<?php echo $href; ?>">
     <?php endif; ?>

@@ -4,26 +4,26 @@
 // Toggles the color format copied to clipboard.
 // --------------------------------------------------------------------------
 
-RN.toggleColorFormat = function() {
+AH.toggleColorFormat = function() {
 
-  'use strict';
+    'use strict';
 
-  function init() {
-    byBehaviour('toggle-color-format').on('change', toggleColorFormat)
-  }
+    function init() {
+        byBehaviour('ah-toggle-color-format').on('change', toggleColorFormat)
+    }
 
-  function toggleColorFormat() {
-    var isChecked = $(this).prop('checked');
-    byBehaviour('copy-color').each(function() {
-      var swatch = $(this),
-          format = isChecked ? swatch.data('hex') : swatch.data('sass');
+    function toggleColorFormat() {
+        var isChecked = $(this).prop('checked');
+        byBehaviour('copy-color').each(function() {
+        var swatch = $(this),
+            format = isChecked ? swatch.data('hex') : swatch.data('sass');
 
-      swatch.attr('data-clipboard-text', format);
-    });
-  }
+        swatch.attr('data-clipboard-text', format);
+        });
+    }
 
-  return {
-    init: init
-  };
+    return {
+        init: init
+    };
 
 }();

@@ -1,0 +1,46 @@
+.ah-color
+    color: $color-base-light
+    cursor: pointer
+    font-family: $base-font-family
+    font-size: $base-font-size
+    height: 180px
+    overflow: hidden
+    position: relative
+    white-space: nowrap
+
+    &:after
+        +align-items(center)
+        +display(flex)
+        +justify-content(center)
+        +position(absolute, 0px)
+        +transform(scale(2) translate3d(0,0,0))
+        +transition(0.5s $ease-in-out-quint)
+        background-color: $color-brand
+        content: 'Copied'
+        opacity: 0
+        text-transform: uppercase
+
+    &--copied
+        +flex(5)
+        &:after
+            +transform(scale(1) translate3d(0,0,0))
+            opacity: 1
+
+    &:hover .ah-color__wrap
+        +transform(translateY(0))
+        +transition(0.5s 0.25s $ease-in-out-quint)
+        opacity: 1
+
+    &__wrap
+        +position(absolute, null null 0px 0px)
+        +transform(translateY(25%))
+        +transition(0.5s $ease-in-out-quint)
+        opacity: 0
+        padding: 20px
+
+    &__name
+        margin: 0 0 10px
+        text-transform: uppercase
+
+    &__value
+        margin: 0

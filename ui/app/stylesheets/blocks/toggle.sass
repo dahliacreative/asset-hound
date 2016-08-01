@@ -1,0 +1,31 @@
+.ah-toggle
+    +align-items(center)
+    +display(flex)
+    color: $color-brand-dark
+    font-family: $base-font-family
+    font-size: 11px
+    text-transform: uppercase
+
+    &__input
+        display: none
+        &:checked + .ah-toggle__label:before
+            +transform(translateX(calc(100% - 2px)))
+
+    &__label
+        +size(44px 24px)
+        background-color: $color-base-light
+        border-radius: 24px
+        border: 1px solid $color-base-medium
+        cursor: pointer
+        display: block
+        margin: 0 10px
+
+        &:before
+            +size(20px)
+            +transition(transform 0.5s $ease-in-out-quint)
+            background-color: $color-brand
+            border: 1px solid $color-brand-dark
+            border-radius: 50%
+            content: ""
+            display: block
+            margin: 1px 0 0 1px

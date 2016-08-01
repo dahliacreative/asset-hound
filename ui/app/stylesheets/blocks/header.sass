@@ -1,0 +1,32 @@
+.ah-header
+    +transition(transform 0.5s $ease-in-out-quint)
+    +position(fixed, 0px 0px null 0px)
+    background-color: $color-brand
+    font-family: $base-font-family
+    font-size: $base-font-size
+    padding: 0 20px
+    z-index: 2
+
+    .nav-open &
+        +transform(translateX(-240px))
+
+    .ah-container
+        +align-items(center)
+        +display(flex)
+        padding: 10px 0 0
+
+    &__logo
+        display: block
+        margin-bottom: -55px
+        width: 220px
+
+    &__control
+        +align-items(center)
+        +display(flex)
+        margin: -10px 0 0 auto
+
+    &__project
+        color: $color-base-light
+        font-size: 16px
+        margin: 0
+        text-transform: uppercase

@@ -10,17 +10,24 @@
 
 $(function() {
 
-  'use strict';
+    'use strict';
 
-  var modules = [
-    'copyToClipboard',
-    'toggleColorFormat'
-  ];
+    var modules = [
+        'copyToClipboard',
+        'toggleColorFormat',
+        'toggleNavigation',
+        'modifierList',
+        'dataBinding',
+        'scrollTo',
+        'tabs'
+    ];
 
-  for(var i = 0; i < modules.length; i++) {
-    RN[modules[i]].init();
-  }
+    for(var i = 0; i < modules.length; i++) {
+        AH[modules[i]].init();
+    }
 
-  hljs.initHighlightingOnLoad();
+    byElement('ah-custom-select').selectron();
+
+    hljs.initHighlightingOnLoad();
 
 });

@@ -7,8 +7,7 @@
         <link rel="stylesheet" href="<?php echo $compiledCSS ?>" />
         <script src="<?php echo $compiledJS ?>"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-        <link rel="stylesheet" href="app/stylesheets/asset-hound.css" />
-        <link rel="stylesheet" href="app/stylesheets/highlight.css" />
+        <link rel="stylesheet" href="app/stylesheets/application.css" />
         <script src="app/javascript/application.js"></script>
     </head>
     <body>

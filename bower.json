@@ -1,7 +1,8 @@
 {
-  "name": "project-name",
+  "name": "asset-hound",
   "authors": [
-    "Rawnet <development@rawnet.com>"
+    "Simon Sturgess <simon@dahliacreative.com>",
+    "Pedro Piedade <pedro@nitrogenio.net>"
   ],
   "ignore": [
     "jquery"
@@ -19,6 +20,11 @@
       "parsleyjs": [
         "bower_components/parsleyjs/dist/parsley.js",
         "bower_components/parsleyjs/dist/parsley.js.map"
+      ],
+      "highlightjs": [
+        "bower_components/highlightjs/highlight.pack.js",
+        "bower_components/highlightjs/styles/default.css",
+        "bower_components/highlightjs/styles/tomorrow-night-eighties.css"
       ]
     }
   },
