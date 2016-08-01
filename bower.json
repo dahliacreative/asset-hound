@@ -1,0 +1,29 @@
+{
+  "name": "project-name",
+  "authors": [
+    "Rawnet <development@rawnet.com>"
+  ],
+  "ignore": [
+    "jquery"
+  ],
+  "install": {
+    "path": "/ui/app/vendor",
+    "ignore": [
+      "jquery"
+    ],
+    "sources": {
+      "slick-carousel": [
+        "bower_components/slick-carousel/slick/slick.scss",
+        "bower_components/slick-carousel/slick/slick.js"
+      ],
+      "parsleyjs": [
+        "bower_components/parsleyjs/dist/parsley.js",
+        "bower_components/parsleyjs/dist/parsley.js.map"
+      ]
+    }
+  },
+  "dependencies": {
+    "picturefill": "3.0.2",
+    "selectron": "jquery-selectron#2.0.0"
+  }
+}
