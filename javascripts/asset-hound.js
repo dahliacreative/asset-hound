@@ -9,31 +9,31 @@ $(function() {
          .replace(/'/g, "&#039;");
   }
 
-  $('.ah-toggle__input').on('change', function() {
-    var checked = $(this).prop('checked');
-    if(checked) {
-      $('.ah-color').each(function() {
-        var color = $(this),
-            value = color.data('hex');
-        color.attr('data-clipboard-text', value);
-      });
-    } else {
-      $('.ah-color').each(function() {
-        var color = $(this),
-            value = color.data('sass');
-        color.attr('data-clipboard-text', value);
-      });
-    }
-  });
+  // $('.ah-toggle__input').on('change', function() {
+  //   var checked = $(this).prop('checked');
+  //   if(checked) {
+  //     $('.ah-color').each(function() {
+  //       var color = $(this),
+  //           value = color.data('hex');
+  //       color.attr('data-clipboard-text', value);
+  //     });
+  //   } else {
+  //     $('.ah-color').each(function() {
+  //       var color = $(this),
+  //           value = color.data('sass');
+  //       color.attr('data-clipboard-text', value);
+  //     });
+  //   }
+  // });
 
-  var clip = new Clipboard('.ah-color');
-  clip.on('success', function(e) {
-    var trigger = $(e.trigger);
-    trigger.addClass('ah-color--copied');
-    setTimeout(function() {
-      trigger.removeClass('ah-color--copied');
-    }, 2000);
-  });
+  // var clip = new Clipboard('.ah-color');
+  // clip.on('success', function(e) {
+  //   var trigger = $(e.trigger);
+  //   trigger.addClass('ah-color--copied');
+  //   setTimeout(function() {
+  //     trigger.removeClass('ah-color--copied');
+  //   }, 2000);
+  // });
 
   $('.ah-navigation__link').on('click', function() {
     var trigger = $(this),
@@ -48,7 +48,7 @@ $(function() {
     return false;
   });
 
-  hljs.initHighlightingOnLoad();
+  // hljs.initHighlightingOnLoad();
 
   $('.ah-component__modifier-list select').on('change', function() {
     var modifier = this.value;

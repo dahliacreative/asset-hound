@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="app/stylesheets/asset-hound.css" />
     <link rel="stylesheet" href="app/stylesheets/highlight.css" />
-    <script src="app/javascripts/clipboard.js"></script>
-    <script src="app/javascripts/highlight.js"></script>
-    <script src="app/javascripts/asset-hound.js"></script>
+    <script src="app/javascript/application.js"></script>
   </head>
   <body>
     
@@ -20,12 +18,12 @@
       <?php include 'includes/navigation.php' ?>
       <div class="ah-page">
         <?php if($showColors) : ?>
-          <?php include 'templates/colors.php' ?>
+          <?php include $root.'templates/colors.php' ?>
         <?php endif; ?>
         <?php if($showTypography) : ?>
-          <?php include 'templates/typography.php' ?>
+          <?php include $root.'templates/typography.php' ?>
         <?php endif; ?>
-        <?php include 'templates/components.php' ?>
+        <?php include $root.'templates/components.php' ?>
       </div>
     </div>
 

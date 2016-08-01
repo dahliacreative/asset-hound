@@ -12,10 +12,15 @@ $(function() {
 
   'use strict';
 
-  var modules = ['exampleModule'];
+  var modules = [
+    'copyToClipboard',
+    'toggleColorFormat'
+  ];
 
   for(var i = 0; i < modules.length; i++) {
     RN[modules[i]].init();
   }
+
+  hljs.initHighlightingOnLoad();
 
 });
