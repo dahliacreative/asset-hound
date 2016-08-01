@@ -14,7 +14,8 @@ assetHoundData: {
     "modifiers": {
         "dark": {
             "title": "Card title dark",
-            "image_src": "http://placehold.it/300"
+            "image_src": "http://placehold.it/300",
+            "date": false
         },
         "support": {
             "title": "Some support title",

@@ -85,32 +85,41 @@ $(function() {
     hljs.highlightBlock(target[0]);
   });
 
-  $('.ah-component__tag input').on('focus', function() {
-    $(this).select();
+  $('.ah-component__tag [contenteditable]').on('focus', function() {
+    var cell = this;
+    var range, selection;
+    if (document.body.createTextRange) {
+      range = document.body.createTextRange();
+      range.moveToElementText(cell);
+      range.select();
+    } else if (window.getSelection) {
+      selection = window.getSelection();
+      range = document.createRange();
+      range.selectNodeContents(cell);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
   });
 
-  $('.ah-component__tag input').on('keyup', function() {
-    console.log('up')
-    $(this).attr('size', $(this).val().length)
-  });
 
-  $('.ah-component__tag input').on('change', function() {
+  $('.ah-component__tag [contenteditable]').on('input', function() {
     var input = $(this),
         editor = input.closest('.ah-component').find('.editor'),
         currentTag =  input.attr('data-tag'),
-        newTag = input.val();
+        newTag = input.html();
 
-        input.attr('data-tag', newTag);
+    if(newTag !== "") {
+      input.attr('data-tag', newTag);
+      editor.each(function() {
+        var editor = $(this),
+            html = editor.html(),
+            newHtml = html.replace('<' + currentTag, '<' +newTag),
+            newHtml = newHtml.replace(currentTag + '>', newTag + '>');
 
-    editor.each(function() {
-      var editor = $(this),
-          html = editor.html(),
-          newHtml = html.replace('<' + currentTag, '<' +newTag),
-          newHtml = newHtml.replace(currentTag + '>', newTag + '>');
-
-      input.attr('data-tag', newTag).val(newTag);
-      editor.html(newHtml.trim()).trigger('input');
-    });
+        input.attr('data-tag', newTag).val(newTag);
+        editor.html(newHtml.trim()).trigger('input');
+      });
+    }
   });
 
 });

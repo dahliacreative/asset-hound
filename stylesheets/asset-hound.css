@@ -489,10 +489,11 @@ body {
         margin-left: 20px; }
       .ah-component__tag label {
         margin-right: 10px; }
-      .ah-component__tag input {
+      .ah-component__tag [contenteditable] {
+        display: inline-block;
         background-color: transparent;
         border: none;
-        border-bottom: 1px dotted #f2e3da;
+        min-width: 8px;
         color: #f2e3da;
         outline: none;
         padding: 5px 0;

@@ -23,7 +23,7 @@ $typographyList = $c->get();
           </div>
           <div class="ah-component__tag">
             <label>Example Tag:</label>
-            <<input type="text" value="h1" data-tag="h1" size="2"/>/>
+            <<span contenteditable spellcheck="false" data-tag="h1">h1</span>/>
           </div>
           <div class="ah-tabs">
             <a href="<?php echo $item["name"]; ?>-example" class="ah-tabs__link ah-tabs__link--active">
