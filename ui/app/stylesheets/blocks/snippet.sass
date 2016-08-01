@@ -1,8 +1,30 @@
 .ah-snippet
+    overflow: hidden
     position: relative
+    &:after
+        +align-items(center)
+        +display(flex)
+        +justify-content(center)
+        +position(absolute, 0px)
+        +transform(scale(2) translate3d(0,0,0))
+        +transition(0.5s $ease-in-out-quint)
+        background-color: $color-brand
+        color: $color-base-light
+        content: 'Copied'
+        font-family: $base-font-family
+        font-size: $base-font-size
+        opacity: 0
+        pointer-events: none
+        text-transform: uppercase
+
+    &--copied
+        &:after
+            +transform(scale(1) translate3d(0,0,0))
+            opacity: 1
     
     &__code
         display: none
 
     .ah-button
         +position(absolute, null 0px 0px null)
+        z-index: 1
