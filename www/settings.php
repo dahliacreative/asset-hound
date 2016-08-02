@@ -17,11 +17,18 @@
         <div class="ah-page">
 
             <section class="ah-section">
+                <header class="ah-section__header">
+                    <h1 class="ah-section__title">Project Settings</h1>
+                </header>
                 <form action="config/save-settings.php" method="POST" class="ah-form">
                     <div class="ah-form__control">
                         <input type="text" class="ah-form__input" value="<?php echo $projectName ?>" name="projectName">
                         <label class="ah-form__label">Project Name</label>
                     </div>
+
+                    <header class="ah-section__header">
+                        <h1 class="ah-section__title">Source Files</h1>
+                    </header>
 
                     <div class="ah-form__control">
                         <input type="text" class="ah-form__input" value="<?php echo $sassPath ?>" name="sassPath">
@@ -33,15 +40,23 @@
                         <label class="ah-form__label">Components Path</label>
                     </div>
 
+                    <header class="ah-section__header">
+                        <h1 class="ah-section__title">Compiled Files</h1>
+                    </header>
+
                     <div class="ah-form__control">
                         <input type="text" class="ah-form__input" value="<?php echo $compiledCSS ?>" name="compiledCSS">
-                        <label class="ah-form__label">Compile CSS Path</label>
+                        <label class="ah-form__label">Compiled CSS Path</label>
                     </div>
 
                     <div class="ah-form__control">
                         <input type="text" class="ah-form__input" value="<?php echo $compiledJS ?>" name="compiledJS">
-                        <label class="ah-form__label">Compile JS Path</label>
+                        <label class="ah-form__label">Compiled JS Path</label>
                     </div>
+
+                    <header class="ah-section__header">
+                        <h1 class="ah-section__title">Styleguide Options</h1>
+                    </header>
 
                     <div class="ah-form__control">
                         <label class="ah-form__label">Display Color Pallete?</label>

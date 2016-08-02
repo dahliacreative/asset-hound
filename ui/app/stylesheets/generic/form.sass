@@ -1,45 +1,50 @@
 .ah-form
+
+    .ah-section__header
+        margin-top: 60px
     
     &__control
         +align-items(stretch)
         +display(flex)
-        margin: 0 auto 20px
-        max-width: 700px
+        margin: 0 0 20px
 
         &--save
             +justify-content(center)
             padding-top: 40px
 
     &__label
-        +transition(background-color 0.3s)
-        background-color: $color-base
-        color: $color-base-light
-        font-family: $base-font-family
-        font-size: 16px
-        line-height: 1
-        padding: 15px
-        text-align: right
-        width: 30%
+        +align-items(center)
+        +display(flex)
+        +justify-content(flex-end)
+        +transition(background-color 0.3s, color 0.3s)
+        background-color: $color-base-medium
         box-sizing: border-box
+        color: $color-base
+        font-family: $base-font-family
+        font-size: $base-font-size
+        line-height: 1
+        padding: 10px
+        width: 18%
 
     &__input,
     .ah-toggle
         +order(1)
         +transition(border-color 0.3s)
         background-color: $color-base-light
-        border: 1px solid $color-base-medium
         border-left: none
+        border: 1px solid $color-base-medium
         box-sizing: border-box
         color: $color-base
         font-family: $base-font-family
         font-size: 16px
         outline: none
         padding: 10px
-        width: 70%
+        width: 82%
         &:focus
             border-color: $color-brand
             + .ah-form__label
                 background-color: $color-brand
+                color: $color-base-light
 
     .ah-toggle
         font-size: 11px
@@ -50,6 +55,3 @@
     #ah-colors,
     #ah-typography
         display: none
-
-    #ah-show-colors:checked ~ #ah-colors
-        display: block
