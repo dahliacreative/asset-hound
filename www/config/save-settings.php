@@ -29,5 +29,7 @@ $showTypography = '.$displayTypo.';
 $typographyFile = "'.$_POST["typographyFile"].'";
 $settingsPage = false;';
 
+// TODO: SOME ERROR CHECKING
+
 file_put_contents("../config.php", $contents);
-header("Location: ../settings.php");
+header("Location: ../settings.php?success");

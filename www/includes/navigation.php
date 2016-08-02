@@ -30,11 +30,21 @@ foreach($fileSystemIterator as $file) {
             </ul>
         </li>
     </ul>
-    <a href="settings.php" class="ah-navigation__link ah-navigation__link--settings">Settings</a>
+    <ul class="ah-navigation__list ah-navigation__list--app">
+        <li class="ah-navigation__item">
+            <a href="settings.php" class="ah-navigation__link">Settings</a>
+        </li>
+        <li class="ah-navigation__item">
+            <a href="about.php" class="ah-navigation__link">About</a>
+        </li>
+    </ul>
     <?php else : ?>
-        <ul class="ah-navigation__list">
+        <ul class="ah-navigation__list ah-navigation__list--app">
             <li class="ah-navigation__item">
                 <a href="index.php" class="ah-navigation__link">Asset Guide</a>
+            </li>
+            <li class="ah-navigation__item">
+                <a href="about.php" class="ah-navigation__link">About</a>
             </li>
         </ul>
     <?php endif;?>

@@ -16,6 +16,8 @@
             .ah-navigation__link
                 font-size: 11px
                 padding: 10px 10px 10px 40px
+        &--app
+            +position(absolute, null 0px 0px 0px)
 
     &__link
         +transition(background-color 0.3s, border-color 0.3s)
@@ -30,6 +32,3 @@
         &--active
             background-color: $color-brand
             border-color: $color-brand-dark
-
-        &--settings
-            +position(absolute, null 0px 0px 0px)

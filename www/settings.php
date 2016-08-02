@@ -11,7 +11,12 @@
     <body>
 
     <div class="ah">
-        <?php $settingsPage = true; ?>
+        <?php 
+            $settingsPage = true; 
+            $successMessage = 'Settings were saved successfully.';
+            $errorMessage = 'There was an error when attempting to save your settings.';
+        ?>
+        <?php include 'includes/notifications.php' ?>
         <?php include 'includes/header.php' ?>
         <?php include 'includes/navigation.php' ?>
         <div class="ah-page">
