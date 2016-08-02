@@ -4,7 +4,7 @@ include $root . "src/Parsers/Components.php";
 include $root . "src/Parsers/Colors.php";
 include $root . "src/Parsers/Typography.php";
 
-$projectName = "Dummy Project 2";
+$projectName = "this is my project";
 $sassPath = "/Users/dahliacreative/Documents/Code/asset-hound/www/dummy-project/sass/";
 $componentsPath = "dummy-project/components/";
 $compiledCSS = "dummy-project/css/application.css";

@@ -1,5 +1,17 @@
 <?php 
 
+if(isset($_POST['showColors']) && $_POST['showColors'] === 'on') {
+    $displayColors = "true";
+} else {
+    $displayColors = "false";
+}
+
+if(isset($_POST['showTypography']) && $_POST['showTypography'] === 'on') {
+    $displayTypo = "true";
+} else {
+    $displayTypo = "false";
+}
+
 $contents = '<?php 
 $root = dirname(__FILE__) . "/";
 include $root . "src/Parsers/Components.php";
@@ -11,9 +23,9 @@ $sassPath = "'.$_POST["sassPath"].'";
 $componentsPath = "'.$_POST["componentsPath"].'";
 $compiledCSS = "'.$_POST["compiledCSS"].'";
 $compiledJS = "'.$_POST["compiledJS"].'";
-$showColors = '.$_POST["showColors"].';
+$showColors = '.$displayColors.';
 $colorsFile = "'.$_POST["colorsFile"].'";
-$showTypography = '.$_POST["showTypography"].';
+$showTypography = '.$displayTypo.';
 $typographyFile = "'.$_POST["typographyFile"].'";
 $settingsPage = false;';
 

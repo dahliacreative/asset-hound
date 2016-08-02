@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="ah-form__control">
-                        <input id="show-colors" type="checkbox" class="ah-form__checkbox" name="showColors" checked="<?php $showColors?>" data-behaviour="ah-update-value">
+                        <input id="show-colors" type="checkbox" class="ah-form__checkbox" name="showColors" <?php if($showColors) { echo "checked"; }?> data-behaviour="ah-update-value">
                         <label for="show-colors" class="ah-form__label">Display Color Pallete?</label>
                     </div>
 
@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="ah-form__control">
-                        <input id="show-typography" type="checkbox" class="ah-form__checkbox" name="showTypography" checked="<?php $showTypography?>" data-behaviour="ah-update-value">
+                        <input id="show-typography" type="checkbox" class="ah-form__checkbox" name="showTypography" <?php if($showTypography) { echo "checked"; }?> data-behaviour="ah-update-value">
                         <label for="show-typography" class="ah-form__label">Display Color Pallete?</label>
                     </div>
 
