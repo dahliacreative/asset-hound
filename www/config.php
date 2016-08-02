@@ -4,13 +4,13 @@ include $root . "src/Parsers/Components.php";
 include $root . "src/Parsers/Colors.php";
 include $root . "src/Parsers/Typography.php";
 
-$projectName = "this is my project";
-$sassPath = "/Users/dahliacreative/Documents/Code/asset-hound/www/dummy-project/sass/";
+$projectName = "Dummy Project 2";
+$sassPath = "dummy-project/sass/";
 $componentsPath = "dummy-project/components/";
 $compiledCSS = "dummy-project/css/application.css";
 $compiledJS = "dummy-project/js/application.js";
-$showColors = true;
+$showColors = false;
 $colorsFile = "colors.sass";
-$showTypography = true;
+$showTypography = false;
 $typographyFile = "typography.sass";
 $settingsPage = false;
