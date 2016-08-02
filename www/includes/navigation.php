@@ -34,7 +34,7 @@ foreach($fileSystemIterator as $file) {
     <?php else : ?>
         <ul class="ah-navigation__list">
             <li class="ah-navigation__item">
-                <a href="index.php" class="ah-navigation__link">Styleguide</a>
+                <a href="index.php" class="ah-navigation__link">Asset Guide</a>
             </li>
         </ul>
     <?php endif;?>

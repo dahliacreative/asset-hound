@@ -76,7 +76,7 @@
                     </div>
 
                     <div class="ah-form__control">
-                        <label class="ah-form__label">Display Color Pallete?</label>
+                        <label class="ah-form__label">Display Typography?</label>
                         <div class="ah-toggle">
                             No
                             <input id="ah-show-typography" type="checkbox" class="ah-toggle__input" name="showTypography" <?php if($showTypography) { echo "checked"; }?> data-behaviour="toggle-field" data-field="#ah-typography">
