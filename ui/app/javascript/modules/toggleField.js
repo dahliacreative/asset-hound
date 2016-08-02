@@ -18,7 +18,11 @@ AH.toggleField = function() {
             field = $(trigger.data('field')),
             checked = trigger.prop('checked');
 
-        field.slideToggle(checked);
+        if(checked) {
+            field.slideDown();
+        } else {
+            field.slideUp();
+        }
     }
 
     return {
