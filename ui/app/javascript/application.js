@@ -19,6 +19,7 @@ $(function() {
         'modifierList',
         'dataBinding',
         'scrollTo',
+        'toggleField',
         'tabs'
     ];
 
@@ -27,7 +28,6 @@ $(function() {
     }
 
     byElement('ah-custom-select').selectron();
-
     hljs.initHighlightingOnLoad();
 
 });

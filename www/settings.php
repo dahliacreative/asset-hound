@@ -19,51 +19,65 @@
             <section class="ah-section">
                 <form action="config/save-settings.php" method="POST" class="ah-form">
                     <div class="ah-form__control">
-                        <label class="ah-form__label">Project Name</label>
                         <input type="text" class="ah-form__input" value="<?php echo $projectName ?>" name="projectName">
+                        <label class="ah-form__label">Project Name</label>
                     </div>
 
                     <div class="ah-form__control">
-                        <label class="ah-form__label">SASS Files Path</label>
                         <input type="text" class="ah-form__input" value="<?php echo $sassPath ?>" name="sassPath">
+                        <label class="ah-form__label">SASS Files Path</label>
                     </div>
 
                     <div class="ah-form__control">
-                        <label class="ah-form__label">Components Path</label>
                         <input type="text" class="ah-form__input" value="<?php echo $componentsPath ?>" name="componentsPath">
+                        <label class="ah-form__label">Components Path</label>
                     </div>
 
                     <div class="ah-form__control">
-                        <label class="ah-form__label">Compile CSS Path</label>
                         <input type="text" class="ah-form__input" value="<?php echo $compiledCSS ?>" name="compiledCSS">
+                        <label class="ah-form__label">Compile CSS Path</label>
                     </div>
 
                     <div class="ah-form__control">
-                        <label class="ah-form__label">Compile JS Path</label>
                         <input type="text" class="ah-form__input" value="<?php echo $compiledJS ?>" name="compiledJS">
+                        <label class="ah-form__label">Compile JS Path</label>
                     </div>
 
                     <div class="ah-form__control">
-                        <input id="show-colors" type="checkbox" class="ah-form__checkbox" name="showColors" <?php if($showColors) { echo "checked"; }?> data-behaviour="ah-update-value">
-                        <label for="show-colors" class="ah-form__label">Display Color Pallete?</label>
+                        <label class="ah-form__label">Display Color Pallete?</label>
+                        <div class="ah-toggle">
+                            No
+                            <input id="ah-show-colors" type="checkbox" class="ah-toggle__input" name="showColors" <?php if($showColors) { echo "checked"; }?> data-behaviour="toggle-field" data-field="#ah-colors">
+                            <label for="ah-show-colors" class="ah-toggle__label"></label>
+                            Yes
+                        </div>
+                    </div>
+
+                    <div id="ah-colors">
+                        <div class="ah-form__control">
+                            <input type="text" class="ah-form__input" value="<?php echo $colorsFile ?>" name="colorsFile">
+                            <label class="ah-form__label">Colors File</label>
+                        </div>
                     </div>
 
                     <div class="ah-form__control">
-                        <label class="ah-form__label">Colors File Path</label>
-                        <input type="text" class="ah-form__input" value="<?php echo $colorsFile ?>" name="colorsFile">
+                        <label class="ah-form__label">Display Color Pallete?</label>
+                        <div class="ah-toggle">
+                            No
+                            <input id="ah-show-typography" type="checkbox" class="ah-toggle__input" name="showTypography" <?php if($showTypography) { echo "checked"; }?> data-behaviour="toggle-field" data-field="#ah-typography">
+                            <label for="ah-show-typography" class="ah-toggle__label"></label>
+                            Yes
+                        </div>
                     </div>
 
-                    <div class="ah-form__control">
-                        <input id="show-typography" type="checkbox" class="ah-form__checkbox" name="showTypography" <?php if($showTypography) { echo "checked"; }?> data-behaviour="ah-update-value">
-                        <label for="show-typography" class="ah-form__label">Display Color Pallete?</label>
+                    <div id="ah-typography">
+                        <div class="ah-form__control">
+                            <input type="text" class="ah-form__input" value="<?php echo $typographyFile ?>" name="typographyFile">
+                            <label class="ah-form__label">Typography File</label>
+                        </div>
                     </div>
 
-                    <div class="ah-form__control">
-                        <label class="ah-form__label">Typography File Path</label>
-                        <input type="text" class="ah-form__input" value="<?php echo $typographyFile ?>" name="typographyFile">
-                    </div>
-
-                    <div class="ah-form__control">
+                    <div class="ah-form__control ah-form__control--save">
                         <button type="submit" class="ah-button">Save Settings</button>
                     </div>
                 </form>
