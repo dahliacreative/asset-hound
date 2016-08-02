@@ -1,23 +1,16 @@
 <?php 
 $root = dirname(__FILE__) . "/";
-include $root . 'src/Parsers/Components.php';
-include $root . 'src/Parsers/Colors.php';
-include $root . 'src/Parsers/Typography.php';
+include $root . "src/Parsers/Components.php";
+include $root . "src/Parsers/Colors.php";
+include $root . "src/Parsers/Typography.php";
 
-// Project Name
-$projectName = 'Dummy Project';
-
-// Paths
-$sassPath = $root . 'dummy-project/sass/';
-$componentsPath = 'dummy-project/components/';
-
-// Compiled Files
-$compiledCSS = 'dummy-project/css/application.css';
-$compiledJS = 'dummy-project/js/application.js';
-
-// Sass Files
+$projectName = "Dummy Project 2";
+$sassPath = "/Users/dahliacreative/Documents/Code/asset-hound/www/dummy-project/sass/";
+$componentsPath = "dummy-project/components/";
+$compiledCSS = "dummy-project/css/application.css";
+$compiledJS = "dummy-project/js/application.js";
 $showColors = true;
-$colorsFile = 'colors.sass';
-
+$colorsFile = "colors.sass";
 $showTypography = true;
-$typographyFile = 'typography.sass';
+$typographyFile = "typography.sass";
+$settingsPage = false;

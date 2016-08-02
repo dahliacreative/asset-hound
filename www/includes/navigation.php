@@ -7,6 +7,7 @@ foreach($fileSystemIterator as $file) {
 ?>
 
 <nav class="ah-navigation">
+    <?php if(!$settingsPage) : ?>
     <ul class="ah-navigation__list">
         <li class="ah-navigation__item">
             <a href="#ah-colors" class="ah-navigation__link ah-navigation__link--active" data-behaviour="ah-scroll-to">Color Pallette</a>
@@ -29,4 +30,13 @@ foreach($fileSystemIterator as $file) {
             </ul>
         </li>
     </ul>
+    <a href="settings.php" class="ah-navigation__link ah-navigation__link--settings">Settings</a>
+    <?php else : ?>
+        <ul class="ah-navigation__list">
+            <li class="ah-navigation__item">
+                <a href="index.php" class="ah-navigation__link">Styleguide</a>
+            </li>
+        </ul>
+    <?php endif;?>
+    
 </nav>
