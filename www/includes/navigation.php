@@ -1,13 +1,12 @@
-<?php
-$fileSystemIterator = new FileSystemIterator($componentsPath);
-$components = array();
-foreach($fileSystemIterator as $file) {
-    $components[] = $file->getFilename();
-}
-?>
-
 <nav class="ah-navigation">
     <?php if(!$settingsPage) : ?>
+    <?php
+        $fileSystemIterator = new FileSystemIterator($componentsPath);
+        $components = array();
+        foreach($fileSystemIterator as $file) {
+            $components[] = $file->getFilename();
+        }
+    ?>
     <ul class="ah-navigation__list">
         <li class="ah-navigation__item">
             <a href="#ah-colors" class="ah-navigation__link ah-navigation__link--active" data-behaviour="ah-scroll-to">Color Pallette</a>

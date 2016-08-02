@@ -1,4 +1,4 @@
-<?php include 'config.php' ?>
+<?php include 'load-config.php' ?>
 <!DOCTYPE html>
 <html>
     <head>

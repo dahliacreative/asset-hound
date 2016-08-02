@@ -1,4 +1,4 @@
-<?php include 'config.php' ?>
+<?php include 'load-config.php' ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,6 +13,9 @@
     <body>
 
     <div class="ah">
+        <!-- TODO:
+            ERROR CHECKING IF SETTNGS ARE INCORRECT DISPLAY MESSAGE WITH LINK TO SETTINGS PAGE!
+        -->
         <?php include 'includes/header.php' ?>
         <?php include 'includes/navigation.php' ?>
         <div class="ah-page">
