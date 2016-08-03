@@ -19,9 +19,9 @@ AH.toggleField = function() {
             checked = trigger.prop('checked');
 
         if(checked) {
-            field.slideDown();
+            field.fadeIn();
         } else {
-            field.slideUp();
+            field.fadeOut();
         }
     }
 

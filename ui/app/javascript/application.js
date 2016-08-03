@@ -20,6 +20,7 @@ $(function() {
         'dataBinding',
         'scrollTo',
         'toggleField',
+        'populateFields',
         'tabs'
     ];
 

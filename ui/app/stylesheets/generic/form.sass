@@ -45,13 +45,12 @@
         width: 18%
 
     &__input,
-    &__select,
-    .ah-toggle
+    &__well
         +order(1)
         +transition(border-color 0.3s)
         background-color: $color-base-light
-        border-left: none
         border: 1px solid $color-base-medium
+        border-left: none
         box-sizing: border-box
         color: $color-base
         font-family: $base-font-family
@@ -68,16 +67,27 @@
         &--textarea
             height: 200px
 
-    &__select
+        &--nested 
+            +flex(1)
+            display: none
+            width: auto
+            ~ .ah-toggle
+                +order(2)
+                margin-left: auto
+
+    &__well
+        +align-items(center)
+        +display(flex)
         padding: 0
-        .selectron__trigger
-            color: $color-base
-            &:before
-                border-color: $color-brand
+
+    .selectron__trigger
+        color: $color-base
+        &:before
+            border-color: $color-brand
 
     .ah-toggle
+        padding-left: 10px
         font-size: 11px
-        padding: 5px 10px
         &__label
             background-color: $color-base-medium
             border-color: darken($color-base-medium, 10%)
