@@ -2,11 +2,29 @@
 
     .ah-section__header
         margin-top: 60px
+
+    &__fieldset
+        border: 2px solid $color-base-medium
+        margin: 20px 0
+        padding: 20px 16px 10px
+
+    &__title
+        border-bottom: 1px solid $color-base-medium
+        color: $color-brand
+        font-size: $base-font-size
+        font-weight: normal
+        margin: 40px 0 10px
+        padding-bottom: 10px
+        &:first-child
+            margin-top: 0
     
     &__control
         +align-items(stretch)
         +display(flex)
-        margin: 0 0 20px
+        margin: 0 0 10px
+
+        &--tall
+            +align-items(flex-start)
 
         &--save
             +justify-content(center)
@@ -23,10 +41,11 @@
         font-family: $base-font-family
         font-size: $base-font-size
         line-height: 1
-        padding: 10px
+        padding: 15px 10px
         width: 18%
 
     &__input,
+    &__select,
     .ah-toggle
         +order(1)
         +transition(border-color 0.3s)
@@ -45,6 +64,16 @@
             + .ah-form__label
                 background-color: $color-brand
                 color: $color-base-light
+
+        &--textarea
+            height: 200px
+
+    &__select
+        padding: 0
+        .selectron__trigger
+            color: $color-base
+            &:before
+                border-color: $color-brand
 
     .ah-toggle
         font-size: 11px

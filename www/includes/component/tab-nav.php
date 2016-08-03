@@ -11,4 +11,7 @@
     <a href="#<?php echo $component["class"]; ?>-comments" class="ah-tab-nav__link" data-behaviour="ah-change-tab">
         <img src="app/images/interface/message.svg" alt="" class="ah-tab-nav__icon">Comments
     </a>
+    <a href="#<?php echo $component["class"]; ?>-config" class="ah-tab-nav__link" data-behaviour="ah-change-tab">
+        <img src="app/images/interface/message.svg" alt="" class="ah-tab-nav__icon">Config
+    </a>
 </div>
