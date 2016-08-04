@@ -32,6 +32,7 @@
     "picturefill": "3.0.2",
     "selectron": "jquery-selectron#2.0.0",
     "clipboard": "1.5.12",
-    "highlightjs": "9.5.0"
+    "highlightjs": "9.5.0",
+    "jquery-serialize-object": "2.5.0"
   }
 }

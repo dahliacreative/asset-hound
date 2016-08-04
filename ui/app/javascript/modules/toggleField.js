@@ -16,12 +16,21 @@ AH.toggleField = function() {
     function toggleField() {
         var trigger = $(this),
             field = $(trigger.data('field')),
-            checked = trigger.prop('checked');
+            checked = trigger.prop('checked'),
+            reversed = trigger.attr('data-reverse-toggle');
 
         if(checked) {
-            field.fadeIn();
+            if(reversed) {
+                field.fadeOut();
+            } else {
+                field.fadeIn();
+            }     
         } else {
-            field.fadeOut();
+            if(reversed) {
+                field.fadeIn()
+            } else {
+                field.fadeOut();
+            } 
         }
     }
 

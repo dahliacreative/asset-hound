@@ -9,7 +9,7 @@ AH.populateFields = function() {
     'use strict';
 
     function init() {
-        byBehaviour('populate-fields').on('change', populateFields);
+        byBehaviour('populate-fields').on('keyup', populateFields);
         byBehaviour('populate-fields').each(populateFields);
     }
 
