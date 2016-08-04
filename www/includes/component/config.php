@@ -23,7 +23,7 @@
     <!-- For each var in component -->
     <?php foreach($component['vars'] as $key=>$var) : ?>
     	<div class="ah-form__control">
-        	<input type="text" class="ah-form__input" value="text(5)" name=<?php echo $key; ?>data-behaviour="populate-fields" data-fields="<?php echo $component["class"] ?>-title">
+        	<input type="text" class="ah-form__input" value="text(5)" name=<?php echo $key; ?>data-behaviour="populate-fields" data-fields="<?php echo $component["class"] ?>-<?php echo $key; ?>">
         	<label class="ah-form__label"><?php echo $var; ?></label>
 	    </div>
     <?php endforeach; ?>	    
@@ -36,21 +36,21 @@
 	            <input 
 	                class="ah-form__input ah-form__input--nested"
 	                type="text" 
-	                id="<?php echo $component["class"] ?>-title" 
-	                data-field="<?php echo $component["class"] ?>-title" 
-	                name="<?php echo $component['class'] ?>[data][default][title]"/>
+	                id="<?php echo $component["class"] ?>-<?php echo $key; ?>" 
+	                data-field="<?php echo $component["class"] ?>-<?php echo $key; ?>" 
+	                name="<?php echo $component['class'] ?>[data][default][<?php echo $key; ?>]"/>
 	            <label class="ah-form__label">Display <?php echo $var; ?>?</label>
 	            <div class="ah-toggle">
 	                Yes
 	                <input 
-	                    id="ah-<?php echo $modifier["modifier"] ?>-show-title" 
+	                    id="ah-<?php echo $modifier["modifier"] ?>-show-<?php echo $key; ?>" 
 	                    type="checkbox" class="ah-toggle__input"
 	                    data-behaviour="toggle-field" 
 	                    data-reverse-toggle="true"
-	                    data-field="#<?php echo $component["class"] ?>-title" 
-	                    name="<?php echo $component['class'] ?>[data][default][<?php echo $var; ?>]" 
+	                    data-field="#<?php echo $component["class"] ?>-<?php echo $key; ?>" 
+	                    name="<?php echo $component['class'] ?>[data][default][<?php echo $key; ?>]" 
 	                    value="false">
-	                <label for="ah-<?php echo $modifier["modifier"] ?>-show-title" class="ah-toggle__label"></label>
+	                <label for="ah-<?php echo $modifier["modifier"] ?>-show-<?php echo $key; ?>" class="ah-toggle__label"></label>
 	                No
 	            </div>
 	        </div>
@@ -66,20 +66,20 @@
 	                <input 
 	                    type="text" 
 	                    class="ah-form__input ah-form__input--nested" 
-	                    id="<?php echo $component["class"]."-".$modifier["modifier"] ?>-title" 
+	                    id="<?php echo $component["class"]."-".$modifier["modifier"] ?>-<?php echo $key; ?>" 
 	                    data-field="<?php echo $component["class"] ?>-title"
-	                    name="<?php echo $component['class'] ?>[data][modifiers][<?php echo $modifier['modifier'] ?>][title]">
-	                <label class="ah-form__label">Display <?php echo $var; ?>?</label>
+	                    name="<?php echo $component['class'] ?>[data][modifiers][<?php echo $modifier['modifier'] ?>][<?php echo $key; ?>]">
+	                <label class="ah-form__label">Display <?php echo $key; ?>?</label>
 	                <div class="ah-toggle">
 	                    Yes
 	                    <input 
-	                        id="ah-<?php echo $modifier["modifier"] ?>-show-title" 
+	                        id="ah-<?php echo $modifier["modifier"] ?>-show-<?php echo $key; ?>" 
 	                        type="checkbox" class="ah-toggle__input"
 	                        data-behaviour="toggle-field" 
 	                        data-reverse-toggle="true"
-	                        data-field="#<?php echo $component["class"]."-".$modifier["modifier"] ?>-title"
+	                        data-field="#<?php echo $component["class"]."-".$modifier["modifier"] ?>-<?php echo $key; ?>"
 	                        value="false"
-	                        name="<?php echo $component['class'] ?>[data][modifiers][<?php echo $modifier['modifier'] ?>][<?php echo $var; ?>]">
+	                        name="<?php echo $component['class'] ?>[data][modifiers][<?php echo $modifier['modifier'] ?>][<?php echo $key; ?>]">
 	                    <label for="ah-<?php echo $modifier["modifier"] ?>-show-title" class="ah-toggle__label"></label>
 	                    No
 	                </div>

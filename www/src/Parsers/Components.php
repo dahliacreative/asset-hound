@@ -6,7 +6,7 @@ class Components
     private $componentsPath;
     private $sassPath;
     private $file;
-    private $excludeVars = ['modifier_classes'];
+    private $excludeVars = ['modifier_classes', 'modifiers', 'view'];
     
     public function __construct($componentsPath, $sassPath)
     {
