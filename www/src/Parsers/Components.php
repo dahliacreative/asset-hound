@@ -6,6 +6,7 @@ class Components
     private $componentsPath;
     private $sassPath;
     private $file;
+    private $excludeVars = ['modifier_classes'];
     
     public function __construct($componentsPath, $sassPath)
     {
@@ -64,6 +65,16 @@ class Components
         $returnData["markup"] = $matches[1];
         $returnData["evalMarkup"] = $this->evalMarkup($returnData["data"], $contents);
         $returnData["c5Include"] = $this->getC5Include($filename);
+
+        // GET ALL THE VARS
+        $pattern = '/\$([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)/';
+        preg_match_all($pattern, $returnData["markup"], $matches);
+        foreach($matches[1] as $key=>$var) {
+        	if(!in_array($var, $this->excludeVars)) {
+        		$varsList[$var] = $matches[0][$key];
+        	}
+        }
+        $returnData["vars"] = $varsList;
         
         // MODIFIERS        
         $modifiers = $this->parseSass($title);        
