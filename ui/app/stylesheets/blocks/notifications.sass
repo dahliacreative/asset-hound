@@ -6,7 +6,7 @@
     z-index: 10
 
     &__notification
-        +animation(hide-notification 0.5s 3s $ease-in-out-quint forwards)
+        +animation(show-notification 0.5s forwards, hide-notification 0.5s 3.5s $ease-in-out-quint forwards)
         +transform(translateY(100%))
         margin: 0
         padding: 20px
@@ -16,6 +16,14 @@
 
         &--error
             background-color: $color-brand-dark
+
+
++keyframes(show-notification)
+    from
+        opacity: 0
+    to
+        opacity: 1
+
 
 +keyframes(hide-notification)
     from

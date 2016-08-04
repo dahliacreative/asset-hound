@@ -16,6 +16,7 @@
         <!-- TODO:
             ERROR CHECKING IF SETTNGS ARE INCORRECT DISPLAY MESSAGE WITH LINK TO SETTINGS PAGE!
         -->
+        <?php include 'includes/notifications.php' ?>
         <?php include 'includes/header.php' ?>
         <?php include 'includes/navigation.php' ?>
         <div class="ah-page">

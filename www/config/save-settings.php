@@ -32,4 +32,5 @@ $settingsPage = false;';
 // TODO: SOME ERROR CHECKING
 
 file_put_contents("../config.php", $contents);
-header("Location: ../settings.php?success");
+header('Content-type: application/json');
+echo json_encode(["status"=>"200"]);

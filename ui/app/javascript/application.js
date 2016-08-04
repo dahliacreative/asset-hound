@@ -21,7 +21,7 @@ $(function() {
         'scrollTo',
         'toggleField',
         'populateFields',
-        'saveComponent',
+        'handleForms',
         'tabs'
     ];
 

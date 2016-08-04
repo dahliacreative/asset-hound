@@ -1,4 +1,4 @@
-<form class="ah-form" data-behaviour="save-component">
+<form class="ah-form" data-behaviour="save-component" data-action="config/save-component.php">
     
     <h4 class="ah-form__title">Asset Hound Config</h4>
     <div class="ah-form__control">

@@ -13,8 +13,6 @@
     <div class="ah">
         <?php 
             $settingsPage = true; 
-            $successMessage = 'Settings were saved successfully.';
-            $errorMessage = 'There was an error when attempting to save your settings.';
         ?>
         <?php include 'includes/notifications.php' ?>
         <?php include 'includes/header.php' ?>
@@ -25,7 +23,7 @@
                 <header class="ah-section__header">
                     <h1 class="ah-section__title">Project Settings</h1>
                 </header>
-                <form action="config/save-settings.php" method="POST" class="ah-form">
+                <form data-behaviour="save-settings" data-action="config/save-settings.php" class="ah-form">
                     <div class="ah-form__control">
                         <input type="text" class="ah-form__input" value="<?php echo $projectName ?>" name="projectName">
                         <label class="ah-form__label">Project Name</label>
