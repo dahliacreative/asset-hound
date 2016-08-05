@@ -73,14 +73,14 @@
 	                <div class="ah-toggle">
 	                    Yes
 	                    <input 
-	                        id="ah-<?php echo $modifier["modifier"] ?>-show-<?php echo $key; ?>" 
+	                        id="<?php echo $modifier["modifier"] ?>-show-<?php echo $key; ?>" 
 	                        type="checkbox" class="ah-toggle__input"
 	                        data-behaviour="toggle-field" 
 	                        data-reverse-toggle="true"
 	                        data-field="#<?php echo $component["class"]."-".$modifier["modifier"] ?>-<?php echo $key; ?>"
 	                        value="false"
 	                        name="<?php echo $component['class'] ?>[data][modifiers][<?php echo $modifier['modifier'] ?>][<?php echo $key; ?>]">
-	                    <label for="ah-<?php echo $modifier["modifier"] ?>-show-<?php echo $key ?>" class="ah-toggle__label"></label>
+	                    <label for="<?php echo $modifier["modifier"] ?>-show-<?php echo $key ?>" class="ah-toggle__label"></label>
 	                    No
 	                </div>
 	            </div>
