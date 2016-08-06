@@ -33,13 +33,13 @@
         <h4 class="ah-form__title">.<?php echo $component["class"] ?></h4>
         <?php foreach($component['vars'] as $key=>$var) : ?>
 	        <div class="ah-form__control">
-	            <input 
+	            <textarea 
 	                class="ah-form__input ah-form__input--nested"
 	                type="text" 
 	                id="<?php echo $component["class"] ?>-<?php echo $key; ?>" 
 	                data-field="<?php echo $component["class"] ?>-<?php echo $key; ?>" 
-	                name="<?php echo $component['class'] ?>[data][default][<?php echo $key; ?>]"/>
-	            <label class="ah-form__label">Display <?php echo $var; ?>?</label>
+	                name="<?php echo $component['class'] ?>[data][default][<?php echo $key; ?>]"></textarea>
+	            <label class="ah-form__label">Display <?php echo $key; ?>?</label>
 	            <div class="ah-toggle">
 	                Yes
 	                <input 
