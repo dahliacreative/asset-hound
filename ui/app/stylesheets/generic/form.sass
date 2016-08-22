@@ -32,7 +32,7 @@
             width: 100%
 
     &__label
-        +align-items(center)
+        +align-items(flex-start)
         +display(flex)
         +justify-content(flex-end)
         +transition(background-color 0.3s, color 0.3s)
@@ -72,7 +72,6 @@
         &--nested
             +flex(1)
             display: none
-            margin-right: 20px
             width: auto
             ~ .ah-toggle
                 +order(2)
@@ -89,7 +88,7 @@
             border-color: $color-brand
 
     .ah-toggle
-        padding-left: 10px
+        padding-right: 10px
         font-size: 11px
         &__label
             background-color: $color-base-medium

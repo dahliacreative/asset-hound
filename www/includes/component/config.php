@@ -34,13 +34,6 @@
                 <h4 class="ah-form__title">.<?php echo $component["class"] ?> attributes</h4>
                 <?php foreach($component['vars'] as $key=>$var) : ?>
                             <div class="ah-form__control">
-                                <textarea
-                                    class="ah-form__input ah-form__input--nested"
-                                    type="text"
-                                    id="<?php echo $component["class"] ?>-<?php echo $key; ?>"
-                                    data-field="<?php echo $component["class"] ?>-<?php echo $key; ?>"
-                                    name="<?php echo $component['class'] ?>[data][default][<?php echo $key; ?>]"></textarea>
-                                <label class="ah-form__label"><?php echo $key; ?></label>
                                 <div class="ah-toggle">
                                     Show
                                     <input
@@ -54,6 +47,13 @@
                                     <label for="ah-<?php echo $modifier["modifier"] ?>-show-<?php echo $key; ?>" class="ah-toggle__label"></label>
                                     Hide
                                 </div>
+                                <textarea
+                                    class="ah-form__input ah-form__input--nested"
+                                    type="text"
+                                    id="<?php echo $component["class"] ?>-<?php echo $key; ?>"
+                                    data-field="<?php echo $component["class"] ?>-<?php echo $key; ?>"
+                                    name="<?php echo $component['class'] ?>[data][default][<?php echo $key; ?>]"></textarea>
+                                <label class="ah-form__label"><?php echo $key; ?></label>
                             </div>
                 <?php endforeach; ?>
             </div>
@@ -63,13 +63,6 @@
                     <h4 class="ah-form__title">.<?php echo $component["class"]."--".$modifier["modifier"] ?> attributes</h4>
                     <?php foreach($component['vars'] as $key=>$var) : ?>
                                 <div class="ah-form__control">
-                                    <textarea
-                                        type="text"
-                                        class="ah-form__input ah-form__input--nested"
-                                        id="<?php echo $component["class"]."-".$modifier["modifier"] ?>-<?php echo $key; ?>"
-                                        data-field="<?php echo $component["class"] ?>-<?php echo $key; ?>"
-                                        name="<?php echo $component['class'] ?>[data][modifiers][<?php echo $modifier['modifier'] ?>][<?php echo $key; ?>]"></textarea>
-                                    <label class="ah-form__label"><?php echo $key; ?></label>
                                     <div class="ah-toggle">
                                         Show
                                         <input
@@ -83,6 +76,13 @@
                                         <label for="<?php echo $modifier["modifier"] ?>-show-<?php echo $key ?>" class="ah-toggle__label"></label>
                                         Hide
                                     </div>
+                                    <textarea
+                                        type="text"
+                                        class="ah-form__input ah-form__input--nested"
+                                        id="<?php echo $component["class"]."-".$modifier["modifier"] ?>-<?php echo $key; ?>"
+                                        data-field="<?php echo $component["class"] ?>-<?php echo $key; ?>"
+                                        name="<?php echo $component['class'] ?>[data][modifiers][<?php echo $modifier['modifier'] ?>][<?php echo $key; ?>]"></textarea>
+                                    <label class="ah-form__label"><?php echo $key; ?></label>
                                 </div>
                     <?php endforeach; ?>
                 </div>
