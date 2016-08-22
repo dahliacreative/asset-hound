@@ -17,7 +17,7 @@
         padding-bottom: 10px
         &:first-child
             margin-top: 0
-    
+
     &__control
         +align-items(stretch)
         +display(flex)
@@ -29,6 +29,7 @@
         &--save
             +justify-content(center)
             padding-top: 40px
+            width: 100%
 
     &__label
         +align-items(center)
@@ -42,7 +43,7 @@
         font-size: $base-font-size
         line-height: 1
         padding: 15px 10px
-        width: 18%
+        width: 20%
 
     &__input,
     &__well
@@ -57,7 +58,7 @@
         font-size: $base-font-size
         outline: none
         padding: 10px
-        width: 82%
+        width: 80%
         &:focus
             border-color: $color-brand
             + .ah-form__label
@@ -68,7 +69,7 @@
             height: 200px
             border: 1px solid $color-base-medium
 
-        &--nested 
+        &--nested
             +flex(1)
             display: none
             margin-right: 20px
@@ -97,3 +98,6 @@
     #ah-colors,
     #ah-typography
         display: none
+
+textarea.ah-form__input--nested
+    height: 43px
