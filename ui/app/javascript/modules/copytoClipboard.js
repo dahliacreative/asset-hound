@@ -33,7 +33,6 @@ AH.copyToClipboard = function() {
     }
 
     function handleCode(e) {
-        console.log('sh')
         var trigger = $(e.trigger),
             snippet = trigger.parent();
 
